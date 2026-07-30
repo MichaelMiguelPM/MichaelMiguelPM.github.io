@@ -278,6 +278,8 @@ form{display:grid;gap:16px}
   .nav-chev{display:inline-block}
   .nav-dd::after{display:none}
   .nav-dd-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;min-width:0;background:none;max-height:0;overflow:hidden;padding:0;transition:max-height .3s var(--ease)}
-  .nav-dd:hover .nav-dd-menu,.nav-dd.open .nav-dd-menu{max-height:560px;padding:0;transform:none}
-  .nav-dd:hover .nav-chev,.nav-dd.open .nav-chev{transform:rotate(180deg)}
+  .nav-dd.open .nav-dd-menu{max-height:560px;padding:0;transform:none}
+  .nav-dd.open .nav-chev{transform:rotate(180deg)}
+  .vibe:hover .vibe-menu,.vibe:focus-within .vibe-menu{opacity:0;visibility:hidden;transform:translateY(-6px)}
+  .vibe.open .vibe-menu{opacity:1;visibility:visible;transform:none}
 }
