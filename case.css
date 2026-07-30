@@ -156,3 +156,26 @@ form{display:grid;gap:16px}
 #formMsg.err{display:block;background:#fdecec;color:#c0392b;border:1px solid #f5c6c6}
 @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.row2{grid-template-columns:1fr}}
+
+
+/* EXPERIENCE PAGE */
+.tl-quote{margin:2px 0 40px;padding:4px 0 4px 22px;border-left:3px solid var(--accent)}
+.tl-quote p{font-family:var(--head-font);font-size:1.12rem;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:10px}
+.tl-quote cite{font-style:normal;font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.exp-groups{margin-top:36px;display:flex;flex-direction:column;gap:0}
+.exp-group{border-top:1px solid var(--border);padding-top:48px;margin-top:48px}
+.exp-group:first-child{border-top:0;padding-top:0;margin-top:0}
+.exp-co{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.co-id{display:flex;align-items:center;gap:14px}
+.co-dates{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:.9rem;white-space:nowrap}
+.co-badge{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:-.02em;flex:none}
+.co-name{font-size:1.5rem}
+.co-name .co-alt{font-size:1rem;color:var(--muted);font-weight:400}
+.co-sub{color:var(--muted);font-size:.9rem;margin-top:3px}
+.exp-roles{display:flex;flex-direction:column;gap:30px;padding-left:58px}
+.role-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.role-head h4{font-family:var(--head-font);font-size:1.18rem;font-weight:600}
+.role-dates{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:.84rem;white-space:nowrap}
+.role p{color:var(--muted);font-size:1rem}
+.exp-roles .tl-quote{margin:0}
+@media(max-width:640px){.exp-roles{padding-left:0}}
