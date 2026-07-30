@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hackathon Project Room v2 — Miguel Haber</title>
-<meta name="description" content="A ground-up redesign of the Brightidea Project Room, delivered through an AI-accelerated design-to-code process in 30 story points instead of 150." />
+<meta name="description" content="A ground up redesign of the Brightidea Project Room, delivered through an AI accelerated design to code process in 30 story points instead of 150." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
@@ -49,16 +49,10 @@
   <div class="wrap reveal">
     <div class="eyebrow">Product Case Study · Brightidea</div>
     <h1>Hackathon Project Room v2</h1>
-    <p class="lead">A ground-up redesign of the Brightidea Project Room, delivered through an AI-accelerated design-to-code process.</p>
+    <p class="lead">A ground up redesign of the Brightidea Project Room, delivered through an AI accelerated design to code process.</p>
     <div class="cs-meta"><span>Role: <b>Product Owner &amp; Product Designer</b></span><span>Company: <b>Brightidea</b></span><span>Timeframe: <b>Apr – Jun 2026</b></span></div>
     <div>
       <span class="pill">Product Design</span><span class="pill">AI Rapid Design</span><span class="pill">Team Collaboration</span><span class="pill">Design Systems</span><span class="pill">0→1</span>
-    </div>
-    <div class="cs-metrics">
-      <div class="cs-metric"><div class="n">150 → 30</div><div class="l">Story points, scoped vs. shipped</div></div>
-      <div class="cs-metric"><div class="n">1 sprint</div><div class="l">Backend + frontend delivered together</div></div>
-      <div class="cs-metric"><div class="n">Toggle-gated</div><div class="l">V1 &amp; V2 coexist safely</div></div>
-      <div class="cs-metric"><div class="n">Size M</div><div class="l">Full collaboration redesign</div></div>
     </div>
   </div>
 </section>
@@ -67,13 +61,14 @@
   <div class="wrap reveal">
     <div class="eyebrow">The Challenge</div>
     <h2>Create a true team collaboration space</h2>
-    <p class="body">A new enterprise Project Room showed only a name, one member, and an empty description — hard-coded and lifeless. The core question: <strong>how do we make a room useful, social, and self-explanatory the moment it exists?</strong></p>
+    <p class="body">A new enterprise Project Room showed only a name, one member, and an empty description — hard coded and lifeless. The core question: <strong>how do we make a room useful, social, and self explanatory the moment it exists?</strong></p>
     <div class="cs-grid" style="margin-top:24px">
       <div class="cs-card"><div class="k">Bare &amp; uninformative rooms</div><p>A new room showed only a name, one member, and an empty description — no way to intuit what it was for.</p></div>
       <div class="cs-card"><div class="k">No useful objects</div><p>Users had no idea what could be done inside, hunting through a small icon to create a memo, task, or whiteboard.</p></div>
       <div class="cs-card"><div class="k">No initiative rooms</div><p>No templates per app, so the Project Room was never leveraged at the Initiative level.</p></div>
       <div class="cs-card"><div class="k">No team collaboration</div><p>No roles, no sense of who was invited or when, and no way to communicate about the project.</p></div>
       <div class="cs-card"><div class="k">No activity or history</div><p>No record of activity or recent work, so users couldn't tell what was happening on their projects.</p></div>
+      <div class="cs-card"><div class="k">No onboarding or guidance</div><p>A new room had no main call to action or guided first step, so users landed with nothing telling them how to begin.</p></div>
     </div>
   </div>
 </section>
@@ -84,39 +79,39 @@
     <h2>Same problems, converging evidence</h2>
     <p class="sub">The same "no context / too empty / what do I even do" complaint surfaced independently across the Project Room audit — a real problem, not a cosmetic one.</p>
     <div class="cs-evidence">
-      <div class="cs-ev"><div class="src">"Empty Dance Floor" room UX</div><p>Gina Romero (CS Rep): "No billboard, no description, or pre-loaded objects on first touch — so clients bypassed or did not adopt."</p><span class="to">Project Summary banner + context <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      <div class="cs-ev"><div class="src">"What do I do or create?"</div><p>Veronika Vacek (CS Rep): "When a new Project Room is created there is no main CTA or helpful onboarding, leaving my clients lost."</p><span class="to">Default-template objects + clear CTAs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      <div class="cs-ev"><div class="src">Team-building confusion</div><p>Johnson &amp; Johnson: "Users felt confused on who was added and when," with "no way to vet the invites or request to join."</p><span class="to">Team components with roles + invite + chat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      <div class="cs-ev"><div class="src">No live status when tied to a Hackathon</div><p>A Project Room created via an Initiative was linked only through a nav item — no information passed between them.</p><span class="to">Initiative Status component <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="cs-ev"><div class="src">Empty "dance floor" on first touch</div><p>With no billboard, description, or preloaded objects when a room opened, clients had no context for what it was or why it mattered — so many bypassed it and never adopted the space. (Flagged by CS rep Gina Romero.)</p></div>
+      <div class="cs-ev"><div class="src">No clear first action</div><p>A brand new room offered no main CTA or onboarding, so clients didn't know what to do or create and were left lost at the exact moment they needed direction. (Flagged by CS rep Veronika Vacek.)</p></div>
+      <div class="cs-ev"><div class="src">Team building confusion</div><p>Members couldn't tell who had been added or when, and had no way to vet invites or request to join — eroding trust in the space before collaboration could even start. (Reported at Johnson &amp; Johnson.)</p></div>
+      <div class="cs-ev"><div class="src">No live status from linked Initiatives</div><p>A room created from an Initiative connected only through a nav link, with no information passing between them — so users lost the context tying their work to the broader effort.</p></div>
     </div>
   </div>
 </section>
 
 <section class="cs-section alt">
   <div class="wrap reveal">
-    <div class="eyebrow">Prototyping</div>
-    <h2>An AI rapid design process</h2>
-    <p class="sub">Scope, prototype first, refine later — the meta-value was proving the workflow as much as the feature. Claude Chat (research &amp; explore) → Claude Design (prototype + refine + test) → Claude Code (production).</p>
-    <div class="cs-quote">
-      <p>"Much more got done in this 30 than a typical 100."</p>
-      <cite>Brightidea front-end developer</cite>
+    <div class="eyebrow">The Solution</div>
+    <h2>All in one place for a team to collaborate</h2>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">Project Information</div><p>Editable hero image, project name, member count, and description.</p></div>
+      <div class="cs-card"><div class="k">Quick Actions bar</div><p>Quick creation of key objects: Whiteboard · Memo · View Tasks · Files.</p></div>
+      <div class="cs-card"><div class="k">"Most Recent" items</div><p>Memos &amp; whiteboards at a glance, timestamped, with direct Open links.</p></div>
+      <div class="cs-card"><div class="k">Activity + History feed</div><p>Real time log of activity, uploads, task completions, and whiteboard updates.</p></div>
+      <div class="cs-card"><div class="k">Team sidebar + chat</div><p>Avatars, names &amp; roles always visible, an Add button, and real time team chat.</p></div>
+      <div class="cs-card"><div class="k">Initiative Templates</div><p>App based reusable components that give users valuable data and info.</p></div>
     </div>
-    <p class="body" style="margin-top:24px">Originally scoped for <strong>150 story points</strong> by engineering, the redesign went to production in only <strong>30</strong> thanks to the new AI process — and completed both backend and frontend within the same sprint.</p>
   </div>
 </section>
 
 <section class="cs-section">
   <div class="wrap reveal">
-    <div class="eyebrow">The Solution</div>
-    <h2>All in one place for a team to collaborate</h2>
-    <div class="cs-grid" style="margin-top:24px">
-      <div class="cs-card"><div class="k"><span class="num">1</span> Project Information</div><p>Editable hero image, project name, member count, and description.</p></div>
-      <div class="cs-card"><div class="k"><span class="num">2</span> Quick Actions bar</div><p>Quick creation of key objects: Whiteboard · Memo · View Tasks · Files.</p></div>
-      <div class="cs-card"><div class="k"><span class="num">3</span> "Most Recent" items</div><p>Memos &amp; whiteboards at a glance, timestamped, with direct Open links.</p></div>
-      <div class="cs-card"><div class="k"><span class="num">4</span> Activity + History feed</div><p>Real-time log of activity, uploads, task completions, and whiteboard updates.</p></div>
-      <div class="cs-card"><div class="k"><span class="num">5</span> Team sidebar + chat</div><p>Avatars, names &amp; roles always visible, an Add button, and real-time team chat.</p></div>
-      <div class="cs-card"><div class="k"><span class="num">6</span> Initiative Templates</div><p>App-based reusable components that give users valuable data and info.</p></div>
+    <div class="eyebrow">Prototyping</div>
+    <h2>An AI rapid design process</h2>
+    <p class="sub">Scope, prototype first, refine later — the meta value was proving the workflow as much as the feature. Claude Chat (research &amp; explore) → Claude Design (prototype + refine + test) → Claude Code (production).</p>
+    <div class="cs-quote">
+      <p>"Much more got done in this 30 than a typical 100."</p>
+      <cite>Brightidea front end developer</cite>
     </div>
+    <p class="body" style="margin-top:24px">Originally scoped for <strong>150 story points</strong> by engineering, the redesign went to production in only <strong>30</strong> thanks to the new AI process — and completed both backend and frontend within the same sprint.</p>
   </div>
 </section>
 
@@ -124,11 +119,11 @@
   <div class="wrap reveal">
     <div class="eyebrow">Sequencing</div>
     <h2>Deliberate slicing — Now · Next · Later</h2>
-    <p class="sub">Front-end-first slices kept demos unblocked while complex backend work (chat, history) caught up separately — sequencing, not scope creep.</p>
+    <p class="sub">Front end first slices kept demos unblocked while complex backend work (chat, history) caught up separately — sequencing, not scope creep.</p>
     <div class="cs-lanes">
-      <div class="cs-lane"><h4>Now</h4><div class="when">In testing / code review</div><ul><li>Hackathon UI shell + settings + activity/chat/history tabs</li><li>Enterprise variant — same UI, system-level toggle</li><li>Chat BE endpoint — per-room, like Idea Comments</li><li>V1/V2 coexistence — protected at the API layer</li></ul></div>
-      <div class="cs-lane"><h4>Next</h4><div class="when">Ready for dev / testing</div><ul><li>Post-design-review polish — a dedicated quality gate</li><li>Dark mode — Hack Dark + BI Dark variants</li><li>Hero image-upload component reused across surfaces</li></ul></div>
-      <div class="cs-lane"><h4>Later</h4><div class="when">Needs discovery first</div><ul><li>Core workflow design for the project room</li><li>Mark-for-Consideration integration</li><li>Project re-submission flow</li></ul></div>
+      <div class="cs-lane"><h4>Now</h4><div class="when">In testing / code review</div><ul><li>Hackathon UI shell + settings + activity/chat/history tabs</li><li>Enterprise variant — same UI, system level toggle</li><li>Chat BE endpoint — per room, like Idea Comments</li><li>V1/V2 coexistence — protected at the API layer</li></ul></div>
+      <div class="cs-lane"><h4>Next</h4><div class="when">Ready for dev / testing</div><ul><li>Post design review polish — a dedicated quality gate</li><li>Dark mode — Hack Dark + BI Dark variants</li><li>Hero image upload component reused across surfaces</li></ul></div>
+      <div class="cs-lane"><h4>Later</h4><div class="when">Needs discovery first</div><ul><li>Core workflow design for the project room</li><li>Mark for Consideration integration</li><li>Project resubmission flow</li></ul></div>
     </div>
   </div>
 </section>
@@ -153,9 +148,9 @@
     <div class="eyebrow">Outcomes</div>
     <h2>Outcomes &amp; reflection</h2>
     <ul class="cs-outcomes" style="margin-top:8px">
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Shipped a ground-up redesign as a safe, <b>toggle-gated slice</b> — without disrupting a single existing room.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Shipped a ground up redesign as a safe, <b>toggle gated slice</b> — without disrupting a single existing room.</span></li>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Grounded every design decision in converging evidence: customer UX diagnoses, dogfood bugs, and an internal audit.</span></li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Built a production-ready experience focused on true participant UI/UX — a real team collaboration tool.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Built a production ready experience focused on true participant UI/UX — a real team collaboration tool.</span></li>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Designed and built a <b>shared, componentized UI</b> so apps could scale on a common foundation.</span></li>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Validated an AI rapid design process — and learned to separate "AI process tax" from real engineering effort.</span></li>
     </ul>
