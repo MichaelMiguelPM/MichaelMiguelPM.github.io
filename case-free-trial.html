@@ -12,21 +12,21 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2324A2A1'/><text x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>M</text></svg>" />
 <style>
 /* Funnel for the hero metrics (Option C — list) */
-.ff-funnel{display:flex;flex-direction:column;gap:0;margin-top:40px;max-width:760px}
-.ff-step{position:relative;display:flex;align-items:flex-start;gap:20px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px 26px;box-shadow:0 12px 34px -24px rgba(15,42,42,.5);overflow:hidden}
+.ff-funnel{display:flex;flex-direction:column;gap:0;margin-top:32px;max-width:760px}
+.ff-step{position:relative;display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:13px 22px;box-shadow:0 10px 28px -24px rgba(15,42,42,.5);overflow:hidden}
 .ff-step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--edge,var(--accent))}
-.ff-ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--accent-soft);border:1px solid var(--border)}
-.ff-ico svg{width:21px;height:21px;stroke:var(--accent);fill:none;stroke-width:2}
-.ff-num{font-family:var(--font-display);font-weight:700;font-size:1.9rem;color:var(--accent);letter-spacing:-.02em;line-height:1;min-width:118px;padding-top:5px}
-.ff-head{display:flex;flex-direction:column}
-.ff-lbl{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--text);margin-bottom:10px;padding-top:2px}
-.ff-list{display:flex;flex-direction:column;gap:5px}
-.ff-list span{display:flex;align-items:center;gap:9px;font-size:.9rem;color:var(--muted)}
-.ff-list span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
-.ff-chev{align-self:center;height:26px;display:grid;place-items:center}
-.ff-chev svg{width:22px;height:22px;stroke:var(--border);fill:none;stroke-width:2.5}
+.ff-ico{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid var(--border)}
+.ff-ico svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2}
+.ff-num{font-family:var(--font-display);font-weight:700;font-size:1.5rem;color:var(--accent);letter-spacing:-.02em;line-height:1;min-width:88px}
+.ff-head{display:flex;flex-direction:column;gap:3px}
+.ff-lbl{font-family:var(--font-display);font-weight:700;font-size:.98rem;color:var(--text)}
+.ff-list{display:flex;flex-wrap:wrap;gap:4px 16px}
+.ff-list span{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--muted)}
+.ff-list span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+.ff-chev{align-self:center;height:14px;display:grid;place-items:center}
+.ff-chev svg{width:17px;height:17px;stroke:var(--border);fill:none;stroke-width:2.5}
 .ff-s1{--edge:#3bbdbc}.ff-s2{--edge:#24a2a1}.ff-s3{--edge:#1a8b8a}.ff-s4{--edge:#116b6a}
-@media(max-width:620px){.ff-step{flex-direction:column;gap:12px}.ff-num{min-width:0;font-size:1.6rem}}
+@media(max-width:620px){.ff-step{flex-direction:column;align-items:flex-start;gap:10px}.ff-num{min-width:0;font-size:1.4rem}.ff-list{flex-direction:column;gap:4px}}
 </style>
 </head>
 <body>
@@ -121,6 +121,19 @@
 
 <section class="cs-section">
   <div class="wrap reveal">
+    <div class="eyebrow">Sequencing</div>
+    <h2>Deliberate slicing: Now · Next · Later</h2>
+    <p class="sub">Shipped the highest-leverage slices first — self-serve signup and instrumentation — so we could measure and convert immediately.</p>
+    <div class="cs-lanes">
+      <div class="cs-lane"><h4>Now</h4><div class="when">Slice 1</div><ul><li>Self-serve trial signup — no sales gate</li><li>Funnel instrumentation in Heap</li><li>In-product upgrade via FastSpring</li><li>Guided activation to first value</li></ul></div>
+      <div class="cs-lane"><h4>Next</h4><div class="when">Slice 2</div><ul><li>Lifecycle nurture: HubSpot triggers</li><li>Conversion experiments — CTA &amp; paywall</li><li>Activation analytics — top drop-offs</li></ul></div>
+      <div class="cs-lane"><h4>Later</h4><div class="when">Discovery</div><ul><li>Usage-based upgrade prompts</li><li>Self-serve expansion (seats/plans)</li><li>PLG-to-sales handoff for hot accounts</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
     <div class="eyebrow">The Funnel</div>
     <h2>From visit to paid revenue</h2>
     <p class="sub">One instrumented path, measured at every stage — from organic traffic on product and pricing pages through to self-serve revenue with no sales touch.</p>
@@ -156,19 +169,6 @@
           <span class="ff-list"><span>Organic traffic that would've churned</span><span>No sales touch points</span><span>True PLG</span></span>
         </span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section alt">
-  <div class="wrap reveal">
-    <div class="eyebrow">Sequencing</div>
-    <h2>Deliberate slicing: Now · Next · Later</h2>
-    <p class="sub">Shipped the highest-leverage slices first — self-serve signup and instrumentation — so we could measure and convert immediately.</p>
-    <div class="cs-lanes">
-      <div class="cs-lane"><h4>Now</h4><div class="when">Slice 1</div><ul><li>Self-serve trial signup — no sales gate</li><li>Funnel instrumentation in Heap</li><li>In-product upgrade via FastSpring</li><li>Guided activation to first value</li></ul></div>
-      <div class="cs-lane"><h4>Next</h4><div class="when">Slice 2</div><ul><li>Lifecycle nurture: HubSpot triggers</li><li>Conversion experiments — CTA &amp; paywall</li><li>Activation analytics — top drop-offs</li></ul></div>
-      <div class="cs-lane"><h4>Later</h4><div class="when">Discovery</div><ul><li>Usage-based upgrade prompts</li><li>Self-serve expansion (seats/plans)</li><li>PLG-to-sales handoff for hot accounts</li></ul></div>
     </div>
   </div>
 </section>
