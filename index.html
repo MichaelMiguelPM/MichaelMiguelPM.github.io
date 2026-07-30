@@ -126,9 +126,9 @@ header.nav.scrolled{border-bottom-color:var(--border)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:1.05rem}
 .brand .mark{
-  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);
-  font-weight:800;font-size:1.1rem
+  font-family:var(--font-display);font-weight:800;font-size:.82rem;letter-spacing:-.02em
 }
 .nav-links{display:flex;align-items:center;gap:30px}
 .nav-links a{font-size:.94rem;color:var(--muted);font-weight:700;transition:color .2s}
@@ -202,9 +202,14 @@ header.nav.scrolled{border-bottom-color:var(--border)}
 /* ============================================================
    ABOUT
    ============================================================ */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
 .about-grid p{color:var(--muted);font-size:1.06rem;margin-bottom:18px}
 .about-grid strong{color:var(--text)}
+.about-body{max-width:780px}
+.about-block{margin-bottom:30px;padding-left:20px;border-left:2px solid var(--border)}
+.about-block:last-child{margin-bottom:0}
+.about-block .ab-h{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.about-block p{margin-bottom:0}
 .principle{
   background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);
   border-radius:14px;padding:22px 24px;margin-top:8px;box-shadow:var(--shadow)
@@ -228,14 +233,24 @@ header.nav.scrolled{border-bottom-color:var(--border)}
 /* ============================================================
    CASE STUDIES
    ============================================================ */
-.cases{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+.cases{display:flex;flex-direction:column;gap:20px;margin-top:34px}
 .case{
-  background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:32px;
+  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:30px 34px;
   position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s
 }
+.case::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));opacity:0;transition:opacity .3s}
+.case:hover::before{opacity:1}
+.case-header{font-family:var(--font-display);font-weight:600;font-size:1.06rem;color:var(--text);margin-bottom:10px}
+.case-side{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:4px;min-width:150px}
+.case-metric{font-family:var(--font-display);font-weight:700;font-size:1.9rem;color:var(--accent);line-height:1;letter-spacing:-.02em}
+.case-metric-l{color:var(--muted);font-size:.82rem}
+.case-cta{margin-top:12px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--accent);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.case:hover .case-cta{gap:12px}
+@media(max-width:700px){.case{grid-template-columns:1fr;gap:18px}.case-side{align-items:flex-start;text-align:left}}
 .case:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--accent)}
 .case .tag{font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.case h3{font-size:1.4rem;margin-bottom:12px}
+.case h3{font-size:1.5rem;margin-bottom:6px}
 .case .result{
   display:inline-flex;align-items:baseline;gap:8px;margin:6px 0 16px;
   font-family:var(--font-display);font-weight:700;font-size:1.7rem;color:var(--text)
@@ -249,10 +264,30 @@ header.nav.scrolled{border-bottom-color:var(--border)}
    EXPERIENCE TIMELINE
    ============================================================ */
 .timeline{margin-top:36px;position:relative;padding-left:30px}
-.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.timeline::before{display:none}
 .tl-item{position:relative;padding-bottom:40px}
 .tl-item:last-child{padding-bottom:0}
 .tl-item::before{content:"";position:absolute;left:-30px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--accent);border:4px solid var(--bg);box-shadow:0 0 0 2px var(--accent)}
+.tl-quote{margin:2px 0 40px;padding:4px 0 4px 22px;border-left:3px solid var(--accent)}
+.tl-quote p{font-family:var(--head-font);font-size:1.12rem;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:10px}
+.tl-quote cite{font-style:normal;font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.exp-groups{margin-top:36px;display:flex;flex-direction:column;gap:0}
+.exp-group{border-top:1px solid var(--border);padding-top:48px;margin-top:48px}
+.exp-group:first-child{border-top:0;padding-top:0;margin-top:0}
+.exp-co{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.co-id{display:flex;align-items:center;gap:14px}
+.co-dates{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:.9rem;white-space:nowrap}
+.co-badge{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:-.02em;flex:none}
+.co-name{font-size:1.5rem}
+.co-name .co-alt{font-size:1rem;color:var(--muted);font-weight:400}
+.co-sub{color:var(--muted);font-size:.9rem;margin-top:3px}
+.exp-roles{display:flex;flex-direction:column;gap:30px;padding-left:58px}
+.role-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.role-head h4{font-family:var(--head-font);font-size:1.18rem;font-weight:600}
+.role-dates{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:.84rem;white-space:nowrap}
+.role p{color:var(--muted);font-size:1rem}
+.exp-roles .tl-quote{margin:0}
+@media(max-width:640px){.exp-roles{padding-left:0}}
 .tl-item h3{font-size:1.3rem}
 .tl-item .meta{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:.92rem;margin:4px 0 10px}
 .tl-item p{color:var(--muted);font-size:1rem}
@@ -303,7 +338,7 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
    ============================================================ */
 @media(max-width:900px){
   .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-  .hero-side{order:-1;max-width:420px}
+  .hero-side{max-width:420px}
   .metric-grid{grid-template-columns:1fr 1fr}
   .cases{grid-template-columns:1fr}
   section{padding:80px 0}
@@ -331,11 +366,12 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand"><span class="mark">M</span> Miguel Haber</a>
+    <a href="#top" class="brand"><span class="mark">MH</span> Miguel Haber</a>
     <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
+      <a href="#top">Overview</a>
       <a href="#experience">Experience</a>
+      <a href="#work">Case studies</a>
+      <a href="#about">About</a>
       <div class="theme-switch" role="group" aria-label="Color theme">
         <button class="dot-teal"     data-set="teal"      aria-pressed="true"  title="Teal (brand)"></button>
         <button class="dot-midnight" data-set="midnight"  aria-pressed="false" title="Midnight"></button>
@@ -353,8 +389,8 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
   <div class="wrap hero-grid">
     <div class="reveal">
       <div class="eyebrow">Senior Product Manager · San Francisco</div>
-      <h1>Products that ship fast<br>and <span class="grad">scale to the enterprise.</span></h1>
-      <p class="lead">I build AI-native products from zero to one, and own enterprise B2B SaaS trusted by Adobe, Amazon, Nike, and LinkedIn. I use AI for speed and volume, and keep human judgment on what is worth building.</p>
+      <h1>AI-enabled Product Manager for the <span class="grad">next chapter in software development.</span></h1>
+      <p class="lead">I build AI-native products from zero to one, and own enterprise B2B SaaS trusted by Adobe, Amazon, Nike, and LinkedIn. I utilize AI tools for every part of the PM process, while keeping human judgment on what is worth building with focus on user empathy and design aesthetic.</p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">View my work
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -368,14 +404,14 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
       <div class="portrait-card">
         <div class="avatar">MH</div>
         <div class="pc-name">Miguel Haber</div>
-        <div class="pc-role">Senior / Staff Product Manager</div>
+        <div class="pc-role">Senior Product Manager</div>
         <ul class="pc-list">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> San Francisco Bay Area</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.8 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg> 5 yrs enterprise B2B SaaS</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4v5"/></svg> Zero-to-one builder</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.8 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg> 8+ years shipping software</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4v5"/></svg> Design-led, collaborative products</li>
         </ul>
         <div style="margin-top:16px">
-          <span class="pill">AI-native PM</span><span class="pill">Growth</span><span class="pill">0→1</span><span class="pill">Platform</span>
+          <span class="pill">Product Management</span><span class="pill">Rapid Prototyping</span><span class="pill">Agile Development</span><span class="pill">CX Design</span>
         </div>
       </div>
     </div>
@@ -390,47 +426,86 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
     <span class="logo">Amazon</span>
     <span class="logo">Nike</span>
     <span class="logo">LinkedIn</span>
+    <span class="logo">John Deere</span>
+    <span class="logo">3M</span>
   </div>
 </div>
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <div class="wrap">
-    <div class="reveal" style="margin-bottom:44px">
-      <div class="eyebrow">About</div>
-      <h2 class="section-title">A product manager built for the AI era.</h2>
-    </div>
-    <div class="about-grid">
-      <div class="reveal">
-        <p>For five years at <strong>Brightidea</strong>, I owned enterprise B2B SaaS end to end, serving customers including Adobe, Amazon, Nike, and LinkedIn. I lead the full arc of the work: discovery with real customers, PRDs and prioritization, shipping, and the growth that follows.</p>
-        <p>What sets my work apart is an <strong>AI-native workflow</strong>. I compress the mechanical parts of product management, PRDs into tickets, research synthesis, prototyping, so the team spends its time on judgment and craft. I have taken a full product redesign from roughly 150 story points down to 35 by rethinking how the work gets done.</p>
-        <p>Outside of software, I served as a caregiver through <strong>Fight2Breathe</strong>, an experience that grounds how I think about products people depend on, and about building for the humans on the other side of the screen.</p>
-      </div>
-      <div class="reveal">
-        <div class="principle">
-          <div class="q">"Use AI for speed and volume. Keep human ownership of what is worth building."</div>
-          <div class="a">A model once synthesized user feedback with total confidence and was wrong about why enterprise admins were stalling during setup. I only caught it on direct customer calls. AI multiplies output; the judgment stays mine.</div>
-        </div>
-        <div style="margin-top:22px">
-          <span class="pill">Product Strategy</span><span class="pill">Enterprise SaaS</span><span class="pill">Growth &amp; Funnels</span><span class="pill">Claude + MCP</span><span class="pill">Figma / Cursor</span><span class="pill">Discovery</span><span class="pill">Roadmapping</span><span class="pill">Prototyping</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= METRICS ================= -->
-<section class="metrics" id="impact">
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
   <div class="wrap">
     <div class="reveal" style="margin-bottom:10px">
-      <div class="eyebrow">Impact by the numbers</div>
-      <h2 class="section-title">Outcomes, not activity.</h2>
+      <div class="eyebrow">Experience</div>
+      <h2 class="section-title">Where I've made an impact.</h2>
     </div>
-    <div class="metric-grid">
-      <div class="metric reveal"><div class="num" data-count="77" data-suffix="%">0%</div><div class="lbl">Fewer story points on a full redesign, 150 → 35, via an AI-native workflow.</div></div>
-      <div class="metric reveal"><div class="num" data-count="123" data-prefix="$" data-suffix="K">$0K</div><div class="lbl">Net paid revenue from a free-trial funnel built largely organically.</div></div>
-      <div class="metric reveal"><div class="num" data-count="8" data-suffix="K">0K</div><div class="lbl">Signups from 43K form visits at 18% blended conversion.</div></div>
-      <div class="metric reveal"><div class="num" data-count="1000" data-suffix="+">0</div><div class="lbl">Unique users on AI whiteboard features in the past year.</div></div>
+
+    <div class="exp-groups">
+
+      <div class="exp-group reveal">
+        <div class="exp-co">
+          <div class="co-id">
+            <div class="co-badge">B</div>
+            <div><h3 class="co-name">Brightidea</h3><div class="co-sub">Enterprise innovation &amp; ideation platform · San Francisco</div></div>
+          </div>
+          <span class="co-dates">Aug 2021 – Present</span>
+        </div>
+        <div class="exp-roles">
+          <div class="role">
+            <div class="role-head"><h4>Senior Product Manager</h4></div>
+            <p>I own Brightidea's Whiteboard end to end and shipped its full AI feature suite, AI brainstorming, one-click organize, smart matrix, and PRD and business-case generation, reaching 1,000+ unique users in the past year and becoming a lead topic in client conversations and sales enablement. I built an AI-augmented PM workflow with Claude and MCP that runs the full cycle, from call transcripts to PRDs to Jira tickets to clickable prototypes and local-dev hand-off. I delivered the Project Room redesign in 35 story points, work that traditionally runs 150+, by designing and prototyping it myself and cutting PRD-to-tickets from days to hours. I also own the Hackathon participant experience for events running 500+ participants, from the onboarding wizard to team building to Project Room.</p>
+          </div>
+          <div class="tl-quote"><p>"Miguel is an effective and creative, AI-fluent product leader … an asset to fast-moving, high-growth teams."</p><cite>Matt Greeley · Founder &amp; CEO, Brightidea</cite></div>
+          <div class="role">
+            <div class="role-head"><h4>Product Manager</h4></div>
+            <p>I owned end-to-end strategy, roadmap, and delivery for Whiteboard, Brightidea's real-time multiplayer ideation canvas used by teams at Adobe, Amazon, Nike, and LinkedIn, joining to stand up the new product line. I built the self-serve trial-to-paid engine from scratch to $123K in net revenue on 43K form visits and 8,000 signups at 18% conversion, largely organic with minimal marketing. I own and continuously expand Brightidea's Free Trial program across 19 enterprise products, spanning sign-up forms, nurture emails, payment and product types, and template configuration. I implemented chatbots, onboarding flows, and in-app messaging to drive trial activation and conversion.</p>
+          </div>
+          <div class="tl-quote"><p>"What sets Miguel apart is his relentless focus on the end user. He's a constant advocate, making sure the user's perspective is in the room for every decision."</p><cite>Katlin Arps · Brightidea</cite></div>
+        </div>
+      </div>
+
+      <div class="exp-group reveal">
+        <div class="exp-co">
+          <div class="co-id">
+            <div class="co-badge">F</div>
+            <div><h3 class="co-name">Famous <span class="co-alt">(now Amaze)</span></h3><div class="co-sub">Browser-based interactive design tool · San Francisco</div></div>
+          </div>
+          <span class="co-dates">Jan 2018 – Jan 2021</span>
+        </div>
+        <div class="exp-roles">
+          <div class="role">
+            <div class="role-head"><h4>Product Manager</h4></div>
+            <p>I owned product roadmaps and full-lifecycle execution for Famous, a browser-based tool for building interactive, animated designs, partnering with design and engineering on nearly every major product decision. I authored PRDs and prioritized the feature backlog, translating user needs and product vision into clear, buildable specs. I shipped Asset Bar, a quick-access tool surface that let new users create designs dramatically faster. I led the Animation and Interaction Refresh, streamlining the core creative workflow so users could build interactive designs in minutes.</p>
+          </div>
+          <div class="tl-quote"><p>"Every company has that one person that is the heart of the culture. Miguel is that person for me."</p><cite>Steve Newcomb · Founder &amp; CEO, Famous</cite></div>
+          <div class="role">
+            <div class="role-head"><h4>Content Producer</h4></div>
+            <p>I produced Famous's educational content library, FAQs, video guides, and full-length design-build tutorials, that helped new users get productive faster. I translated a complex creative tool into clear, approachable learning material that supported onboarding and activation. My tutorials doubled as enablement and demand content, showing prospects and users exactly what the product could do.</p>
+          </div>
+          <div class="tl-quote"><p>"He is more than just an All-Star content producer; he is a key member of the product team and central to the Famous company culture."</p><cite>Sara Osborn · Famous (now Amaze)</cite></div>
+          <div class="role">
+            <div class="role-head"><h4>Community Manager</h4></div>
+            <p>I hands-on onboarded every early user from the first alpha through beta user #200, turning their feedback into signal that shaped early product decisions. I ran a weekly Friday all-hands, bringing in designers from major tech companies to share their careers and work and to build community around the product. I served as the connective tissue between our earliest users and the team, keeping the community engaged as the product matured.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-group reveal">
+        <div class="exp-co">
+          <div class="co-id">
+            <div class="co-badge">F2</div>
+            <div><h3 class="co-name">Fight2Breathe</h3><div class="co-sub">Caregiving &amp; 501(c)(3) advocacy · San Francisco</div></div>
+          </div>
+          <span class="co-dates">Jan 2014 – Jan 2018</span>
+        </div>
+        <div class="exp-roles">
+          <div class="role">
+            <div class="role-head"><h4>Caregiver &amp; Advocate</h4></div>
+            <p>I was the primary caregiver to a Cystic Fibrosis patient, helping take her from surviving to thriving through hospice, two double-lung transplants, and 70+ procedures. I served as Creative Director for the organization's 501(c)(3) charity arm, producing branded apparel and media content. I led partnerships for events, public speaking engagements, community gatherings, and giving-back initiatives. This is where I learned to make high-stakes decisions with empathy and clarity under pressure, the foundation for how I build today.</p>
+          </div>
+          <div class="tl-quote"><p>"When I reached end-stage lung disease at 21, my brother became my caregiver almost overnight. He learned in real time what it meant to keep me alive."</p><cite>Caleigh Haber Takayama · Sister &amp; CF patient, Fight2Breathe</cite></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -441,64 +516,89 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
     <div class="reveal" style="margin-bottom:10px">
       <div class="eyebrow">Selected work</div>
       <h2 class="section-title">Case studies.</h2>
-      <p class="section-lead">A few projects that show how I move from ambiguous problem to shipped outcome.</p>
+      <p class="section-lead">Four deep-dives into how I move from an ambiguous problem to a shipped outcome. Click any card for the full breakdown.</p>
     </div>
     <div class="cases">
-
-      <div class="case reveal">
-        <div class="tag">AI-Native Delivery</div>
-        <h3>Redesign at a fraction of the cost</h3>
-        <div class="result">150 → 35 <small>story points</small></div>
-        <p>Rebuilt how a full product redesign was scoped and executed. By using AI to draft flows, generate boilerplate, and pressure-test edge cases, the team cut estimated effort by roughly 77% without cutting scope.</p>
-        <ul><li>AI-native workflow</li><li>Scoping</li><li>Delivery</li></ul>
-      </div>
-
-      <div class="case reveal">
-        <div class="tag">Growth</div>
-        <h3>A free-trial engine built organically</h3>
-        <div class="result">$123K <small>net paid revenue</small></div>
-        <p>Designed and instrumented a self-serve free-trial funnel: 43K form visits, 8K signups, 18% blended conversion. Built largely through organic channels and continuous funnel optimization.</p>
-        <ul><li>Funnel design</li><li>Heap / HubSpot</li><li>Conversion</li></ul>
-      </div>
-
-      <div class="case reveal">
-        <div class="tag">0 → 1 AI Product</div>
-        <h3>AI whiteboard features people actually use</h3>
-        <div class="result">1,000+ <small>unique users / yr</small></div>
-        <p>Shipped AI-powered whiteboard capabilities from concept to adoption, reaching over a thousand unique users in the first year through tight discovery loops and fast iteration.</p>
-        <ul><li>0→1</li><li>AI features</li><li>Adoption</li></ul>
-      </div>
-
-      <div class="case reveal">
-        <div class="tag">Ops &amp; Velocity</div>
-        <h3>PRD to tickets, days to hours</h3>
-        <div class="result">Days → Hours <small>cycle time</small></div>
-        <p>Built a Claude-plus-MCP workflow that turns a finished PRD into structured, ready-to-groom engineering tickets. What used to take days of manual breakdown now takes hours, freeing the team for higher-order work.</p>
-        <ul><li>Claude + MCP</li><li>Automation</li><li>Team velocity</li></ul>
-      </div>
-
+      <a class="case reveal" href="case-free-trial.html">
+        <div class="case-main">
+          <div class="tag">Growth · Brightidea</div>
+          <h3>Self-Serve Free Trial</h3>
+          <div class="case-header">A trial-to-paid funnel that turned organic traffic into $123K</div>
+          <p>Brightidea sold enterprise-only while tens of thousands of high-intent visitors had no way to try the product. I owned the self-serve Free Trial end to end, a frictionless, instrumented path from anonymous visitor to paying customer.</p>
+          <ul><li>Growth</li><li>PLG</li><li>Funnel Instrumentation</li><li>Activation</li></ul>
+        </div>
+        <div class="case-side">
+          <div class="case-metric">$123K</div>
+          <div class="case-metric-l">net new revenue</div>
+          <span class="case-cta">Read case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="case reveal" href="case-project-room.html">
+        <div class="case-main">
+          <div class="tag">Product Design · Brightidea</div>
+          <h3>Hackathon Project Room v2</h3>
+          <div class="case-header">A ground-up collaboration redesign, shipped in 30 story points not 150</div>
+          <p>Project Rooms launched empty and lifeless. As Product Owner and Designer I rebuilt the space around a project summary, quick actions, live activity, team chat, and reusable templates, shipped safely behind feature toggles.</p>
+          <ul><li>Product Design</li><li>AI Rapid Design</li><li>Team Collaboration</li><li>Design Systems</li></ul>
+        </div>
+        <div class="case-side">
+          <div class="case-metric">150 → 30</div>
+          <div class="case-metric-l">story points</div>
+          <span class="case-cta">Read case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="case reveal" href="case-whiteboard.html">
+        <div class="case-main">
+          <div class="tag">Platform · Brightidea</div>
+          <h3>Whiteboard</h3>
+          <div class="case-header">Five years of a flagship canvas, to enterprise-wide AI adoption</div>
+          <p>I've owned Brightidea's real-time collaborative canvas for five years and 50 epics, shipping Smart Matrix, Stacks/Kanban, and the AI-in-Whiteboard suite, and connecting a freeform canvas to Brightidea's structured Pipeline.</p>
+          <ul><li>Platform</li><li>Built-in AI</li><li>Roadmapping</li><li>PLG</li></ul>
+        </div>
+        <div class="case-side">
+          <div class="case-metric">80%</div>
+          <div class="case-metric-l">enterprise AI adoption</div>
+          <span class="case-cta">Read case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="case reveal" href="case-ai-workflow.html">
+        <div class="case-main">
+          <div class="tag">AI-Augmented PM · Brightidea</div>
+          <h3>Shipping Product at AI Speed</h3>
+          <div class="case-header">Two products from concept to shipping code, with minimal engineering</div>
+          <p>Facing a thin engineering team, I stress-tested a Claude-driven delivery loop, Chat to Design to Code to Cowork and MCP, to ship Project Room v2 and a self-serve Hackathon Free Trial, even shipping a full-stack feature solo in about two days.</p>
+          <ul><li>AI-Augmented PM</li><li>Prototyping</li><li>Full-Stack</li><li>Claude + MCP</li></ul>
+        </div>
+        <div class="case-side">
+          <div class="case-metric">Weeks → Days</div>
+          <div class="case-metric-l">delivery compression</div>
+          <span class="case-cta">Read case study <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
-<section id="experience" class="metrics">
+<!-- ================= ABOUT ================= -->
+<section id="about">
   <div class="wrap">
-    <div class="reveal" style="margin-bottom:10px">
-      <div class="eyebrow">Experience</div>
-      <h2 class="section-title">Where I've made an impact.</h2>
+    <div class="reveal" style="margin-bottom:40px">
+      <div class="eyebrow">About</div>
+      <h2 class="section-title">Get to know a bit more about Miguel</h2>
     </div>
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <h3>Senior Product Manager — Brightidea</h3>
-        <div class="meta">Enterprise B2B SaaS · ~5 years</div>
-        <p>Owned enterprise products serving customers including Adobe, Amazon, Nike, and LinkedIn. Led discovery, roadmap, and delivery; drove growth through a self-serve free-trial funnel; shipped AI-native features and pioneered an AI-assisted delivery workflow that dramatically cut cycle time.</p>
-      </div>
-      <div class="tl-item reveal">
-        <h3>Caregiver &amp; Advocate — Fight2Breathe</h3>
-        <div class="meta">Lived experience · Ongoing</div>
-        <p>Served as a caregiver and advocate, an experience that shapes how I build for people who depend on the products they use, and informs my empathy-first approach to product decisions.</p>
-      </div>
+    <div class="about-body reveal">
+        <div class="about-block">
+          <div class="ab-h">Product Career</div>
+          <p>At <strong>Brightidea</strong>, I owned collaborative innovation products end to end, launching Hackathon programs, bringing AI into the Whiteboard, and shipping Project Room so teams could run ideation at scale, for customers including Adobe, Amazon, Nike, and LinkedIn. At <strong>Famous</strong>, I led customer onboarding and helped develop a high-end design tool, learning what it takes to make a premium creative product feel effortless.</p>
+        </div>
+        <div class="about-block">
+          <div class="ab-h">Early Career</div>
+          <p>Before product, I was a caregiver through <strong>Fight2Breathe</strong>, absorbing heavy medical knowledge and making decisions in life-or-death situations, the root of my bias toward empathy and clarity under pressure. With <strong>Canvas Surfboard</strong>, I learned to create hard physical products, taught myself CAD design, and figured out how to sell and run a business from the ground up.</p>
+        </div>
+        <div class="about-block">
+          <div class="ab-h">Personal</div>
+          <p>Volleyball is where I sharpen team building, dedication, and execution, including coaching at the high-school level. <strong>Surfing</strong> is the counterweight, a solo practice that demands self-awareness and determination, right down to shaping my own boards.</p>
+        </div>
     </div>
   </div>
 </section>
@@ -547,7 +647,7 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
-    <a href="#top" class="brand"><span class="mark">M</span> Miguel Haber</a>
+    <a href="#top" class="brand"><span class="mark">MH</span> Miguel Haber</a>
     <p>Senior Product Manager · San Francisco Bay Area</p>
     <div class="social">
       <a href="mailto:miguelharrisonhaber@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="teal">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shipping Product at AI Speed — Miguel Haber</title>
+<meta name="description" content="How I used Claude — Chat, Cowork, Design, and Code — to take two products from concept to shipping code with minimal engineering support." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="case.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2324A2A1'/><text x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>M</text></svg>" />
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html#work" class="back"><span class="mark">MH</span> Back to all work</a>
+    <div class="theme-switch" role="group" aria-label="Color theme">
+      <button class="dot-teal" data-set="teal" aria-pressed="true" title="Teal"></button>
+      <button class="dot-midnight" data-set="midnight" aria-pressed="false" title="Midnight"></button>
+      <button class="dot-editorial" data-set="editorial" aria-pressed="false" title="Editorial"></button>
+    </div>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">AI Workflow · Product Case Study · Brightidea</div>
+    <h1>Shipping Product at AI Speed</h1>
+    <p class="lead">How I used Claude — Chat, Cowork, Design, and Code — to take two products from concept to shipping code: a redesigned Project Room (v2) and a self-serve Hackathon Free Trial, with minimal engineering support.</p>
+    <div class="cs-meta"><span>Role: <b>Product Manager</b></span><span>Company: <b>Brightidea</b></span><span>Projects: <b>Project Room v2 · Hackathon Free Trial</b></span></div>
+    <div>
+      <span class="pill">AI-Augmented PM</span><span class="pill">Prototyping</span><span class="pill">Full-Stack</span><span class="pill">Claude + MCP</span><span class="pill">Rapid Delivery</span>
+    </div>
+    <div class="cs-metrics">
+      <div class="cs-metric"><div class="n">Weeks → Days</div><div class="l">Delivery compression</div></div>
+      <div class="cs-metric"><div class="n">~2 days</div><div class="l">Solo full-stack feature, end to end</div></div>
+      <div class="cs-metric"><div class="n">~30 sp</div><div class="l">Project Room v2, vs a typical 100</div></div>
+      <div class="cs-metric"><div class="n">5×</div><div class="l">Target team pace with the process</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Challenge</div>
+    <h2>Accelerate or die: a thin engineering team</h2>
+    <p class="body">I owned two roadmap bets — <strong>Project Room v2</strong>, a full redesign of Brightidea's collaboration space, and a <strong>self-serve Hackathon Free Trial</strong> that turns an anonymous visitor into a paying customer. Both had to move fast against limited engineering capacity, so I deliberately stress-tested an AI-driven delivery process using Claude to do work that used to wait on design reviews, designers, front-end devs, or other cross-functional peers.</p>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">Limited engineering capacity</div><p>Two roadmap bets, not enough dev hours to build them the traditional way.</p></div>
+      <div class="cs-card"><div class="k">Design &amp; front-end bottleneck</div><p>Prototype and UI work stalled waiting on designer and FE availability.</p></div>
+      <div class="cs-card"><div class="k">A heavy process to build</div><p>The classic research → design review → prototype → PRD → dev hand-off was too slow for the pace we wanted.</p></div>
+      <div class="cs-card"><div class="k">A process worth proving</div><p>If AI could compress delivery, it would change how the whole product team ships.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">How I Work</div>
+    <h2>One loop: Chat → Design → Code → Ship</h2>
+    <p class="sub">Requirements stay deliberately loose up front — the transcript and the prototype become the spec. Feedback from each review feeds straight back into the loop.</p>
+    <div class="cs-grid" style="margin-top:8px">
+      <div class="cs-card"><div class="k"><span class="num">1</span> Claude Chat</div><p>Research, synthesize meeting transcripts, draft the backlog, debug, and learn new tools on the fly.</p></div>
+      <div class="cs-card"><div class="k"><span class="num">2</span> Claude Design</div><p>Turn requirements into a clickable prototype the team can react to, edit, and review live.</p></div>
+      <div class="cs-card"><div class="k"><span class="num">3</span> Claude Code</div><p>Build the prototype into production front-end and back-end, gated behind feature toggles.</p></div>
+      <div class="cs-card"><div class="k"><span class="num">4</span> Cowork + MCP</div><p>Wire Claude into Slack, local dev, GitHub, and Brightidea's own MCP to run the loop end to end.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Proof · Project Room v2</div>
+    <h2>From a Claude prototype to shipped UI</h2>
+    <div class="cs-grid" style="margin-top:8px;margin-bottom:26px">
+      <div class="cs-card"><div class="k"><span class="num">1</span> Prototype in Claude Design</div><p>Built a clickable Project Room homepage, iterated it with stakeholders in a live review, and shared individual files for each team member to ideate on.</p></div>
+      <div class="cs-card"><div class="k"><span class="num">2</span> Hand off to Claude Code</div><p>Our front-end dev took the same design file into Claude Code. Once the flows stuck, net-new pages came together in a fraction of the usual time.</p></div>
+      <div class="cs-card"><div class="k"><span class="num">3</span> Ship behind toggles</div><p>Homepage, project-level chat, history, unified Hackathon/Enterprise templates and dark mode — roughly 30 story points, every piece gated for enterprise safety.</p></div>
+    </div>
+    <div class="cs-quote">
+      <p>"Much more got done in this 30 than a typical 100."</p>
+      <cite>Brightidea front-end developer</cite>
+    </div>
+    <p class="body" style="margin-top:22px">Green-lit to ship Project Room v2 for all net-new Project Rooms in Enterprise, and new Hackathon Apps.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">Proof · Hackathon Free Trial</div>
+    <h2>A solo PM shipping a full-stack feature</h2>
+    <p class="sub">I pushed the entire Hackathon Free Trial setup through my own local dev — no engineers, Claude-enabled. In about two days I had the full path working end to end, on a branch pushed to GitHub.</p>
+    <div class="cs-grid" style="margin-top:8px">
+      <div class="cs-card"><div class="k">New product type</div><p>A "Hackathon" free-trial product type, an option flag, and an admin toggle.</p></div>
+      <div class="cs-card"><div class="k">New self-serve signup form</div><p>A landing page wired to a HubSpot form that captures the lead.</p></div>
+      <div class="cs-card"><div class="k">Template resolution</div><p>Per-template design folders so the create flow returns the right resources.</p></div>
+      <div class="cs-card"><div class="k">Verified end to end</div><p>Web page → signup → HubSpot → domain/password → system creation → live hackathon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Solve Problems</div>
+    <h2>Using AI to get unstuck</h2>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">Local dev, debugged with Claude</div><p>Missing Composer deps, stale nginx routing, an un-compiled JS bundle, an expiring dev cert — Claude diagnosed and fixed the environment gaps so the demo ran.</p></div>
+      <div class="cs-card"><div class="k">Meetings become the spec</div><p>I narrate decisions on a call, then have Claude pull the transcript, extract action items, and draft the Jira tickets and PRD — no separate write-up.</p></div>
+      <div class="cs-card"><div class="k">Backlog audits on demand</div><p>Claude reads the Slack and Jira trail and surfaces what's done, blocked, or missing, so nothing quietly falls through the cracks.</p></div>
+      <div class="cs-card"><div class="k">CI as a safety net</div><p>Our pod added CI checks on every PR; when AI writes a feature, I hand the failure straight back to Claude to fix and re-run.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">Learn</div>
+    <h2>New territory in days, not weeks</h2>
+    <p class="sub">This work pushed me well outside a typical PM lane — into HubSpot internals, Stripe products, local Docker builds, GitHub workflows, and MCP. The point was never to replace engineers or designers; it was to remove the wait, arrive at every conversation with something real, and keep the loop moving.</p>
+    <div class="cs-grid" style="margin-top:8px">
+      <div class="cs-card"><div class="k">New tooling on demand</div><p>Rebuilt my HubSpot knowledge and stood up the signup form and custom properties without a specialist.</p></div>
+      <div class="cs-card"><div class="k">Full-stack fluency</div><p>Got comfortable in the codebase, local environment, and GitHub — enough to open real, review-ready PRs.</p></div>
+      <div class="cs-card"><div class="k">Wiring Claude into the stack</div><p>Connected Claude to local dev, GitHub, and Brightidea's MCP so one AI loop spans design, code, and QA.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Snapshot</div>
+    <h2>My role at a glance</h2>
+    <dl class="cs-snap" style="margin-top:22px">
+      <div><dt>Role</dt><dd>Product Manager — owned both initiatives end to end, from concept to shipping code</dd></div>
+      <div><dt>AI Toolkit</dt><dd>Claude Chat · Cowork · Design · Code · MCP / connectors</dd></div>
+      <div><dt>Method</dt><dd>Prototype in Claude Design → build in Claude Code → local dev → QA, all behind toggles</dd></div>
+      <div><dt>Projects</dt><dd>Project Room v2 (collaboration redesign) · Hackathon Free Trial (self-serve funnel)</dd></div>
+      <div><dt>Stack</dt><dd>HubSpot · Stripe · GitHub · Heap · Jira · Slack · internal Brightidea platform (PHP / JS)</dd></div>
+      <div><dt>Partners</dt><dd>Engineering and GTM leadership</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">Outcomes</div>
+    <h2>What the AI workflow changed</h2>
+    <ul class="cs-outcomes" style="margin-top:8px">
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Compressed delivery from <b>weeks to days</b>. A self-serve trial that once implied a multi-engineer, multi-week effort came together solo in about two days.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Shipped a full Project Room redesign (v2) into the release for Enterprise and Hackathon, built through a Claude Design → Claude Code pipeline without a designer.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Redefined an <b>AI-empowered PM role</b> — a single PM prototyping, building, and debugging, not just writing specs and waiting.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Turned an experiment into a repeatable team process that can move the product team at ~5× pace.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Biggest lesson: keep requirements loose early and let the prototype and transcript be the spec — speed comes from iterating in the tool, not from a heavier plan.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cs-cta">
+  <div class="wrap reveal">
+    <h2>Want the deeper walkthrough?</h2>
+    <div class="row">
+      <a href="index.html#work" class="btn btn-ghost">← All case studies</a>
+      <a href="index.html#contact" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© <span id="yr"></span> Miguel Haber · <a href="index.html" style="color:var(--accent);font-weight:700">Back to portfolio</a></div></footer>
+<script src="case.js"></script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
