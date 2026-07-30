@@ -178,7 +178,7 @@ form{display:grid;gap:16px}
 .role-dates{font-family:var(--font-display);font-weight:600;color:var(--accent);font-size:.84rem;white-space:nowrap}
 .role p{color:var(--muted);font-size:1rem}
 .exp-roles .tl-quote{margin:0}
-@media(max-width:640px){.exp-roles{padding-left:0}}
+@media(max-width:640px){.exp-roles{padding-left:0}.co-id{align-items:flex-start}.co-badge{margin-top:2px}}
 
 
 /* CASE STUDIES LIST PAGE */
