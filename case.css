@@ -191,9 +191,10 @@ form{display:grid;gap:16px}
 .case::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));opacity:0;transition:opacity .3s}
 .case:hover::before{opacity:1}
 .case-header{font-family:var(--font-display);font-weight:600;font-size:1.06rem;color:var(--text);margin-bottom:10px}
-.case-side{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:4px;min-width:150px}
-.case-metric{font-family:var(--font-display);font-weight:700;font-size:1.9rem;color:var(--accent);line-height:1;letter-spacing:-.02em}
-.case-metric-l{color:var(--muted);font-size:.82rem}
+.case-side{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:6px;min-width:170px}
+.case-metric{font-family:var(--font-display);font-weight:700;font-size:clamp(2.4rem,3.2vw,3.1rem);color:var(--accent);line-height:1;letter-spacing:-.03em}
+.case-metric-l{color:var(--muted);font-size:.9rem}
+.case-badge{width:68px;height:68px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);font-family:var(--font-display);font-weight:800;font-size:1.6rem;letter-spacing:-.02em;margin-bottom:2px}
 .case-cta{margin-top:12px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--accent);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
 .case:hover .case-cta{gap:12px}
 @media(max-width:700px){.case{grid-template-columns:1fr;gap:18px}.case-side{align-items:flex-start;text-align:left}}
