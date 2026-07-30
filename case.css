@@ -208,3 +208,15 @@ form{display:grid;gap:16px}
 .case p{color:var(--muted);font-size:.98rem;margin-bottom:14px}
 .case ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
 .case ul li{font-size:.8rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--border);padding:5px 11px;border-radius:999px}
+
+
+/* ABOUT PAGE */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.about-grid p{color:var(--muted);font-size:1.06rem;margin-bottom:18px}
+.about-grid strong{color:var(--text)}
+.about-body{max-width:780px}
+.about-block{margin-bottom:30px;padding-left:20px;border-left:2px solid var(--border)}
+.about-block:last-child{margin-bottom:0}
+.about-block .ab-h{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.about-block p{margin-bottom:0}
+.about-block p{color:var(--muted);font-size:1.05rem;line-height:1.7}
