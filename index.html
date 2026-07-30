@@ -125,7 +125,7 @@ header.nav{
 header.nav.scrolled{border-bottom-color:var(--border)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:1.05rem}
-.brand .mark{
+.mark{
   width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);
   font-family:var(--font-display);font-weight:800;font-size:.82rem;letter-spacing:-.02em
@@ -151,6 +151,44 @@ header.nav.scrolled{border-bottom-color:var(--border)}
 .dot-teal{background:linear-gradient(135deg,#24A2A1,#1a8b8a)}
 .dot-midnight{background:linear-gradient(135deg,#0b1120,#3dd0cf)}
 .dot-editorial{background:linear-gradient(135deg,#faf8f4,#0f6b68)}
+
+/* brand + "change the vibe" dropdown */
+.brand-group{display:flex;align-items:center;gap:11px}
+.brand-name{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--text)}
+.vibe{position:relative;display:flex}
+.vibe-btn{padding:0;border:none;background:none;cursor:pointer;line-height:0;border-radius:8px}
+.vibe::after{content:"";position:absolute;top:100%;left:0;width:220px;height:16px}
+.vibe-menu{position:absolute;top:calc(100% + 12px);left:0;min-width:210px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:10px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;z-index:130}
+.vibe:hover .vibe-menu,.vibe:focus-within .vibe-menu{opacity:1;visibility:visible;transform:none}
+.vibe-title{font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:6px 8px 9px}
+.vibe-opt{display:flex;align-items:center;gap:11px;width:100%;padding:9px 8px;border:none;background:none;cursor:pointer;border-radius:10px;transition:background .15s}
+.vibe-opt:hover{background:var(--surface-2)}
+.vibe-swatch{width:26px;height:26px;border-radius:7px;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.vibe-swatch.teal{background:linear-gradient(135deg,#24A2A1,#1a8b8a)}
+.vibe-swatch.midnight{background:linear-gradient(135deg,#0b1120,#3dd0cf)}
+.vibe-swatch.editorial{background:linear-gradient(135deg,#e7e1d4,#0f6b68)}
+.vibe-name{font-family:var(--font-display);font-weight:700;font-size:.95rem}
+.vibe-name.teal{color:#24A2A1}
+.vibe-name.midnight{color:#2aa6c9}
+.vibe-name.editorial{color:#0f6b68}
+.vibe-opt[aria-pressed="true"]{background:var(--surface-2)}
+.vibe-opt[aria-pressed="true"] .vibe-swatch{box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 0 0 2px var(--text)}
+
+/* case studies hover dropdown */
+.nav-dd{position:relative;display:flex;align-items:center}
+.nav-dd > a{display:inline-flex;align-items:center;gap:5px}
+.nav-dd::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);width:300px;height:16px}
+.nav-dd-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:290px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;z-index:130}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%)}
+.nav-dd-menu a{display:block;padding:10px 12px;border-radius:10px;font-size:.92rem!important;font-weight:700;color:var(--text)!important;transition:background .15s,color .15s}
+.nav-dd-menu a:hover{background:var(--surface-2);color:var(--accent)!important}
+.nav-dd-menu a small{display:block;font-weight:400;font-size:.76rem;color:var(--muted);margin-top:2px}
+.nav-chev{transition:transform .2s}
+.nav-dd:hover .nav-chev,.nav-dd:focus-within .nav-chev{transform:rotate(180deg)}
+@media(max-width:640px){
+  .nav-dd-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:2px 0 6px 14px;min-width:0;background:none}
+  .nav-dd::after,.nav-chev{display:none}
+}
 
 /* ============================================================
    HERO
@@ -370,17 +408,31 @@ footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand"><span class="mark">MH</span> Miguel Haber</a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#top">Overview</a>
-      <a href="experience.html">Experience</a>
-      <a href="case-studies.html">Case studies</a>
-      <a href="about.html">About</a>
-      <div class="theme-switch" role="group" aria-label="Color theme">
-        <button class="dot-teal"     data-set="teal"      aria-pressed="true"  title="Teal (brand)"></button>
-        <button class="dot-midnight" data-set="midnight"  aria-pressed="false" title="Midnight"></button>
-        <button class="dot-editorial"data-set="editorial" aria-pressed="false" title="Editorial"></button>
+    <div class="brand-group">
+      <div class="vibe">
+        <button class="vibe-btn" aria-label="Change the color theme"><span class="mark">MH</span></button>
+        <div class="vibe-menu">
+          <div class="vibe-title">Change the vibe</div>
+          <button class="vibe-opt" data-set="teal" aria-pressed="true"><span class="vibe-swatch teal"></span><span class="vibe-name teal">Teal</span></button>
+          <button class="vibe-opt" data-set="midnight" aria-pressed="false"><span class="vibe-swatch midnight"></span><span class="vibe-name midnight">Midnight</span></button>
+          <button class="vibe-opt" data-set="editorial" aria-pressed="false"><span class="vibe-swatch editorial"></span><span class="vibe-name editorial">Editorial</span></button>
+        </div>
       </div>
+      <a href="#top" class="brand-name">Miguel Haber</a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#top">Homepage</a>
+      <a href="experience.html">Experience</a>
+      <div class="nav-dd">
+        <a href="case-studies.html">Case studies <svg class="nav-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav-dd-menu">
+          <a href="case-free-trial.html">Self-Serve Free Trial<small>$123K self-serve funnel</small></a>
+          <a href="case-project-room.html">Hackathon Project Room v2<small>150 &#8594; 30 story-point redesign</small></a>
+          <a href="case-whiteboard.html">Whiteboard<small>Five-year flagship canvas</small></a>
+          <a href="case-ai-workflow.html">Shipping Product at AI Speed<small>AI-augmented delivery</small></a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
       <a href="contact.html" class="nav-cta">Get in touch</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
@@ -463,13 +515,13 @@ menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
 /* ---------- theme switcher (persists) ---------- */
-const themeBtns = document.querySelectorAll('.theme-switch button');
+const themeBtns = document.querySelectorAll('.vibe-opt');
 function setTheme(name){
   document.documentElement.setAttribute('data-theme', name);
   themeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.set === name));
   try{ localStorage.setItem('mh-theme', name); }catch(e){}
 }
-themeBtns.forEach(b => b.addEventListener('click', () => setTheme(b.dataset.set)));
+themeBtns.forEach(b => b.addEventListener('click', () => { setTheme(b.dataset.set); b.blur(); }));
 try{ const saved = localStorage.getItem('mh-theme'); if(saved) setTheme(saved); }catch(e){}
 
 /* ---------- reveal on scroll ---------- */
