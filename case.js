@@ -17,7 +17,10 @@
   var menuBtn=document.getElementById('menuBtn'), navLinks=document.getElementById('navLinks');
   if(menuBtn&&navLinks){
     menuBtn.addEventListener('click',function(){navLinks.classList.toggle('open');});
-    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open');});});
+    var dd=navLinks.querySelector('.nav-dd'), ddLink=dd&&dd.querySelector(':scope > a');
+    var isTouch=function(){return matchMedia('(hover: none)').matches;};
+    if(ddLink){ddLink.addEventListener('click',function(e){if(isTouch()){e.preventDefault();dd.classList.toggle('open');}});}
+    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(a===ddLink&&isTouch())return;navLinks.classList.remove('open');});});
   }
 
   // reveal on scroll
