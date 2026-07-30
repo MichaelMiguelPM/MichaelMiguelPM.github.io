@@ -136,3 +136,23 @@ footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color
   .cs-hero{padding:120px 0 50px}
   .cs-section{padding:52px 0}
 }
+
+/* CONTACT PAGE */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.contact-info a.line{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.contact-info a.line:hover{color:var(--accent)}
+.contact-info .ic{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);border:1px solid var(--border)}
+.contact-info .ct{font-family:var(--font-display);font-weight:700;font-size:1rem}
+.contact-info .cs{font-size:.86rem;color:var(--muted)}
+form{display:grid;gap:16px}
+.field label{display:block;font-size:.85rem;font-weight:700;font-family:var(--font-display);margin-bottom:7px}
+.field input,.field textarea{width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-family:var(--font-body);font-size:1rem;transition:border-color .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field textarea{min-height:130px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-note{font-size:.82rem;color:var(--muted)}
+#formMsg{font-size:.92rem;font-weight:700;display:none;padding:12px 16px;border-radius:12px}
+#formMsg.ok{display:block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--border)}
+#formMsg.err{display:block;background:#fdecec;color:#c0392b;border:1px solid #f5c6c6}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.row2{grid-template-columns:1fr}}
