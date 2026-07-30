@@ -27,6 +27,8 @@
 .ff-chev svg{width:17px;height:17px;stroke:var(--border);fill:none;stroke-width:2.5}
 .ff-s1{--edge:#3bbdbc}.ff-s2{--edge:#24a2a1}.ff-s3{--edge:#1a8b8a}.ff-s4{--edge:#116b6a}
 @media(max-width:620px){.ff-step{flex-direction:column;align-items:flex-start;gap:10px}.ff-num{min-width:0;font-size:1.4rem}.ff-list{flex-direction:column;gap:4px}}
+.cs-ev .sol{margin-top:14px;padding-top:13px;border-top:1px dashed var(--border)}
+.cs-ev .sol-l{display:block;font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
 </style>
 </head>
 <body>
@@ -68,7 +70,7 @@
     <div class="eyebrow">Product Case Study · Brightidea</div>
     <h1>Self-Serve Free Trial</h1>
     <p class="lead">A self-serve trial-to-paid funnel that turned organic web traffic into $123K in net new revenue, built and shipped with an AI-accelerated workflow.</p>
-    <div class="cs-meta"><span>Role: <b>Product Manager</b></span><span>Company: <b>Brightidea</b></span><span>Timeframe: <b>2021 · ongoing</b></span></div>
+    <div class="cs-meta"><span>Role: <b>Senior Product Manager</b></span><span>Company: <b>Brightidea</b></span><span>Timeframe: <b>2021 · ongoing</b></span></div>
     <div>
       <span class="pill">Growth</span><span class="pill">PLG</span><span class="pill">Funnel Instrumentation</span><span class="pill">Activation</span><span class="pill">Monetization</span>
     </div>
@@ -86,6 +88,7 @@
       <div class="cs-card"><div class="k">Sales-gated onboarding</div><p>Getting into a trial required back-and-forth with a rep, so signups stalled and only a fraction activated.</p></div>
       <div class="cs-card"><div class="k">No instrumented funnel</div><p>Without visit → signup → activation → paid tracking, we could not see where prospects dropped off.</p></div>
       <div class="cs-card"><div class="k">No path to purchase</div><p>Even engaged trial users had no frictionless, self-serve way to convert to a paid plan.</p></div>
+      <div class="cs-card"><div class="k">Cold-start, empty trials</div><p>Opening to an empty workspace with no data to react to, users had nothing to explore and struggled to reach a first "aha."</p></div>
     </div>
   </div>
 </section>
@@ -96,10 +99,21 @@
     <h2>Where prospects fell out of the funnel</h2>
     <p class="sub">The same "I want to try it but I can't" friction showed up across web analytics and sales feedback.</p>
     <div class="cs-evidence">
-      <div class="cs-ev"><div class="src">Traffic with nowhere to go</div><p>Heap: ~43K visits reached product &amp; pricing pages with no self-serve entry point.</p><span class="to">Self-serve trial signup <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      <div class="cs-ev"><div class="src">Signups stalling before value</div><p>Funnel data showed drop-off between signup and activation — users never hit a first "aha."</p><span class="to">Guided activation + clear first action <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      <div class="cs-ev"><div class="src">Sales-gated bottleneck</div><p>HubSpot: reps manually provisioned trials, prioritizing enterprise leads with large budgets.</p><span class="to">Remove the sales gate <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-      <div class="cs-ev"><div class="src">No conversion mechanism</div><p>FastSpring: no in-product path existed to turn an active trial into a paid subscription.</p><span class="to">In-product self-serve checkout <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="cs-ev">
+        <div class="src">Traffic with nowhere to go</div>
+        <p>Heap showed ~43K visits reaching the product &amp; pricing pages each period with no self-serve entry point — the highest-intent audience hit a dead end, so the top of the funnel leaked entirely.</p>
+        <div class="sol"><span class="sol-l">Potential solution</span><span class="to">A public, self-serve trial signup — no sales gate <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="cs-ev">
+        <div class="src">Sales-gated bottleneck</div>
+        <p>In HubSpot, reps manually provisioned every trial and prioritized large-budget enterprise leads, so smaller high-intent prospects waited on a human or never got in at all.</p>
+        <div class="sol"><span class="sol-l">Potential solution</span><span class="to">Instant, automated trial provisioning <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="cs-ev">
+        <div class="src">No conversion mechanism</div>
+        <p>FastSpring showed no in-product path to pay — even activated trial users could only convert through a manual, rep-driven process that stalled momentum at the moment of intent.</p>
+        <div class="sol"><span class="sol-l">Potential solution</span><span class="to">In-product self-serve checkout <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
     </div>
   </div>
 </section>
