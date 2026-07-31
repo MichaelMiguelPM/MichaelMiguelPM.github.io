@@ -125,7 +125,10 @@ header.nav.scrolled{border-bottom-color:var(--border)}
 .cs-cta .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* FOOTER */
-footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+footer{padding:44px 0;text-align:center}
+footer .social{display:flex;gap:16px;justify-content:center;margin-top:16px}
+footer .social a{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--border);color:var(--muted);transition:all .2s}
+footer .social a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
