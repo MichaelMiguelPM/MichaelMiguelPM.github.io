@@ -397,13 +397,12 @@ html.mento-open #mento-gate{display:none}
 
 <script>
 (function(){
-  try{ if(sessionStorage.getItem('mento-unlock')==='1'){ document.documentElement.classList.add('mento-open'); } }catch(e){}
+  // Passcode is required on every visit — the unlock is intentionally not persisted.
   var PASS='claysteel';
   function unlock(){
     var el=document.getElementById('mento-pass');
     var val=(el.value||'').trim().toLowerCase();
     if(val===PASS){
-      try{ sessionStorage.setItem('mento-unlock','1'); }catch(e){}
       document.documentElement.classList.add('mento-open');
     }else{
       var err=document.getElementById('mento-err'); if(err) err.style.display='block';
