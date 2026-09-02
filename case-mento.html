@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="teal">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Private Case Study — Miguel Haber</title>
+<meta name="description" content="Private work sample. Passcode required." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="case.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2324A2A1'/><text x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>M</text></svg>" />
+<style>
+/* ---- Passcode gate ---- */
+#mento-main{visibility:hidden}
+html.mento-open #mento-main{visibility:visible}
+html.mento-open #mento-gate{display:none}
+#mento-gate{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg,#0d2b2b)}
+.gate-card{width:100%;max-width:440px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:38px 34px;box-shadow:0 30px 80px -40px rgba(0,0,0,.6);text-align:center}
+.gate-lock{width:56px;height:56px;margin:0 auto 18px;border-radius:15px;display:grid;place-items:center;background:var(--accent-soft);border:1px solid var(--border)}
+.gate-lock svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2}
+.gate-card h1{font-family:var(--font-display);font-size:1.5rem;margin:0 0 8px;color:var(--text);letter-spacing:-.01em}
+.gate-card p{color:var(--muted);font-size:.95rem;line-height:1.5;margin:0 0 22px}
+.gate-field{display:flex;gap:10px}
+.gate-field input{flex:1;padding:12px 15px;border:1px solid var(--border);border-radius:11px;background:var(--bg,#fff);color:var(--text);font-size:1rem;font-family:inherit;outline:none}
+.gate-field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.gate-field button{flex:none;padding:12px 20px;border:none;border-radius:11px;background:var(--accent);color:#fff;font-family:var(--font-display);font-weight:700;font-size:.95rem;cursor:pointer}
+.gate-field button:hover{background:var(--accent-2)}
+#mento-err{display:none;color:#d64545;font-size:.85rem;margin:14px 0 0;font-weight:600}
+.gate-foot{margin:22px 0 0;font-size:.78rem;color:var(--muted);opacity:.8}
+.gate-foot a{color:var(--accent);text-decoration:none}
+/* ---- Content helpers ---- */
+.mt-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:.92rem}
+.mt-table th,.mt-table td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.mt-table th{font-family:var(--font-display);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.mt-table td:first-child{font-family:var(--font-display);font-weight:600;color:var(--text);white-space:nowrap}
+.mt-table tr:last-child td{border-bottom:none}
+.mt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:640px){.mt-table td:first-child{white-space:normal}}
+.mt-briefs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+@media(max-width:760px){.mt-briefs{grid-template-columns:1fr}}
+.mt-brief{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 24px 8px;box-shadow:0 14px 34px -28px rgba(15,42,42,.5)}
+.mt-brief .bh{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--accent);margin:0 0 3px}
+.mt-brief .bm{font-size:.78rem;color:var(--muted);margin:0 0 16px;letter-spacing:.02em}
+.mt-brief dl{margin:0}
+.mt-brief dt{font-family:var(--font-display);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px}
+.mt-brief dd{margin:0 0 15px;font-size:.9rem;line-height:1.55;color:var(--text)}
+.mt-cap{margin-top:16px;font-size:.85rem;color:var(--muted);font-style:italic}
+.mt-note{margin-top:20px;padding:15px 18px;background:var(--accent-soft);border:1px solid var(--border);border-radius:12px;font-size:.9rem;color:var(--text)}
+</style>
+</head>
+<body>
+
+<!-- ===== Passcode gate ===== -->
+<div id="mento-gate">
+  <div class="gate-card">
+    <div class="gate-lock"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+    <h1>Private case study</h1>
+    <p>This work sample is passcode protected. Enter the passcode you were given to view it.</p>
+    <div class="gate-field">
+      <input id="mento-pass" type="password" placeholder="Passcode" autocomplete="off" autofocus />
+      <button id="mento-btn" type="button">Unlock</button>
+    </div>
+    <p id="mento-err">That passcode is not right. Try again.</p>
+    <p class="gate-foot">Don't have the passcode? <a href="contact.html">Get in touch</a>.</p>
+  </div>
+</div>
+
+<div id="mento-main">
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="brand-group">
+      <div class="vibe">
+        <button class="vibe-btn" aria-label="Change the color theme"><span class="mark">MH</span></button>
+        <div class="vibe-menu">
+          <div class="vibe-title">Change the vibe</div>
+          <button class="vibe-opt" data-set="teal" aria-pressed="true"><span class="vibe-swatch teal"></span><span class="vibe-name teal">Ola Verde</span></button>
+          <button class="vibe-opt" data-set="midnight" aria-pressed="false"><span class="vibe-swatch midnight"></span><span class="vibe-name midnight">Dark Mode</span></button>
+          <button class="vibe-opt" data-set="editorial" aria-pressed="false"><span class="vibe-swatch editorial"></span><span class="vibe-name editorial">La Playa</span></button>
+        </div>
+      </div>
+      <span class="brand-name">Miguel Haber</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Homepage</a>
+      <a href="experience.html">Experience</a>
+      <div class="nav-dd">
+        <a href="case-studies.html">Case studies <svg class="nav-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav-dd-menu">
+          <a href="case-ai-workflow.html">Shipping Product at AI Speed<small>How I used Claude — Chat, Cowork, Design, and Code</small></a>
+          <a href="case-free-trial.html">Self-Serve Free Trial<small>Built a frictionless path from anonymous visitor to paying customer</small></a>
+          <a href="case-project-room.html">Hackathon Project Room v2<small>Redesigning of Project Room, delivered through an AI-enabled process.</small></a>
+          <a href="case-whiteboard.html">Whiteboard<small>An AI-powered, real-time multiplayer ZUI</small></a>
+          <a href="case-mento.html">🔒 Pregame<small>Private work sample, passcode protected</small></a>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <a href="prototypes.html">Prototypes <svg class="nav-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav-dd-menu">
+          <a href="prototype-bi-project-room.html">BI Project Room (desktop)<small>Interactive desktop prototype, built with Claude Design.</small></a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">Private Work Sample · Mento</div>
+    <h1>Pregame</h1>
+    <p class="lead">Context, before the session. Not during. A one page brief that assembles everything that changed since the last session, delivered in product and by email 24 hours before the next one. One version for the coach, one for the member.</p>
+    <div class="cs-meta"><span>Role: <b>Product Manager, AI</b></span><span>For: <b>Mento (work sample)</b></span><span>Focus: <b>AI product strategy</b></span></div>
+    <div>
+      <span class="pill">AI Product</span><span class="pill">Coaching</span><span class="pill">Assembly, not Intelligence</span><span class="pill">Trust &amp; Safety</span><span class="pill">MVP Scoping</span>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Recommendation</div>
+    <h2>Build Pregame</h2>
+    <p class="body">Moments makes coaching actionable between sessions. Session Reflection looks back at a session. Pregame looks forward across the whole engagement, the same way Session Reflection exists today, one version for the coach and one for the member. The claim underneath everything: <strong>Pregame invents no new information</strong>. Every input already exists in the product and is already visible to someone. This is an assembly problem, not an intelligence problem, which is exactly why it empowers the coaching session instead of replacing coach insight.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Problem</div>
+    <h2>The promise is coaching with context. The gap is assembly.</h2>
+    <p class="body">Today context lives across multiple surfaces within Mento that arrive at different times, and nobody is watching all of them. Transcripts and Session Reflections land after each session. Documents arrive whenever a member uploads one. Growth Plan steps move continuously. Peer Insights trickle in per cycle. Pulse Check is recurring. So the assembly of all that data happens live, in the opening minutes of a 45 minute session, out loud, on the clock.</p>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">Multiple surfaces and timelines</div><p>No single view answers "what changed since we last spoke," so the coach reconstructs it in the room.</p></div>
+      <div class="cs-card"><div class="k">Session Reflection looks back</div><p>It is scoped to recapping sessions that just ended and are fresh in mind. That does not help set context before the next session.</p></div>
+      <div class="cs-card"><div class="k">Nobody confirms the AI's read</div><p>Session Reflection makes interpretive claims about a person, in second person, as that person's own realization. Neither role reviews their own before it lands.</p></div>
+    </div>
+    <div class="mt-note">Who has it: the coach has this problem, the member experiences it, and the buyer pays for it.</div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Audiences</div>
+    <h2>One primary pair, four audiences touched</h2>
+    <p class="sub">Primary users are the coach and the member. Several other roles feel the change.</p>
+    <div class="mt-wrap">
+      <table class="mt-table">
+        <thead><tr><th>Audience</th><th>What changes for them</th></tr></thead>
+        <tbody>
+          <tr><td>Members</td><td>A role specific brief. They arrive knowing what they said they would do and what has changed since. Preparation stops being optional.</td></tr>
+          <tr><td>Head of Coaching</td><td>Consistent preparation quality across a growing bench, without adding mentor coaching hours.</td></tr>
+          <tr><td>Buyers</td><td>Coaching with context becomes clearly obvious rather than a promise. Higher session quality behind the utilization they already track.</td></tr>
+          <tr><td>Ops</td><td>Verified, structured engagement state replaces manual reconstruction.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-note">Once a pre session surface exists, company context, engagement risk, and coach handoffs all have somewhere to live.</div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Experience</div>
+    <h2>Six inputs that already exist, assembled into one page</h2>
+    <p class="sub">One page, two versions, delivered in product and by email 24 hours before the session. The email reuses the existing concierge envelope, so it feels native on day one.</p>
+    <div class="mt-wrap">
+      <table class="mt-table">
+        <thead><tr><th>Source</th><th>Cadence</th><th>What Pregame pulls</th></tr></thead>
+        <tbody>
+          <tr><td>Session transcripts</td><td>After each session</td><td>What repeats across sessions rather than within one. The language a member keeps reaching for.</td></tr>
+          <tr><td>Session Reflections</td><td>After each session</td><td>Themes recurring across multiple reflections, plus what the member highlighted in their own judgment.</td></tr>
+          <tr><td>Documents</td><td>Ad hoc</td><td>Anything uploaded or completed since the last session. A finished Beliefs Exercise nobody flagged.</td></tr>
+          <tr><td>Growth Plan</td><td>Continuous</td><td>Step and milestone status: what moved, what the member added, what has been sitting untouched. Status and stalls, never new steps.</td></tr>
+          <tr><td>Peer Insights</td><td>Per cycle</td><td>New responses since last session and the themes in them. Two of five responded is itself an agenda item.</td></tr>
+          <tr><td>Pulse Check</td><td>Recurring</td><td>Movement against previous responses. Direction matters more than the score.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-briefs">
+      <div class="mt-brief">
+        <p class="bh">Coach Pregame</p>
+        <p class="bm">What the coach reads before the room</p>
+        <dl>
+          <dt>Where they sit</dt><dd>Where the member sits against their Growth Plan, and what moved.</dd>
+          <dt>The pattern</dt><dd>What repeated across sessions that no single reflection would show.</dd>
+          <dt>What arrived</dt><dd>Documents, peer responses, and Pulse movement since last session.</dd>
+          <dt>Their own words</dt><dd>What the member highlighted in their own reflection.</dd>
+          <dt>Your edge</dt><dd>Where this coach's domain expertise is relevant to what the member is facing.</dd>
+        </dl>
+      </div>
+      <div class="mt-brief">
+        <p class="bh">Member Pregame</p>
+        <p class="bm">What the member reads before the room</p>
+        <dl>
+          <dt>Your commitments</dt><dd>What you said you would do, and where it stands.</dd>
+          <dt>Last time</dt><dd>What you highlighted in your last reflection.</dd>
+          <dt>What is new</dt><dd>What arrived since your last session that you may not have opened.</dd>
+          <dt>Bring this</dt><dd>What you might want to bring to the conversation.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">The Dependency</div>
+    <h2>Step one: Moments has to evolve first</h2>
+    <p class="body">Session Reflection tells a member things like "being the safety net was your whole identity here." That is an interpretation, not a summary, and today nobody confirms it before it lands. Pregame would read reflections across an entire engagement, so a wrong interpretation stops being one bad paragraph and becomes a pattern the coach walks in believing.</p>
+    <p class="body">The fix is a review step on each role's own reflection. The coach reviews the coach version, the member reviews the member version, neither sees the other. Confirm, edit, or remove, in under 60 seconds. Confirmed content is what Pregame is allowed to build on. Unconfirmed content still exists, flagged and weighted down. This is an evolution of a surface that already exists, it makes the newest AI feature more trustworthy on its own terms, and it is the dependency that makes everything downstream worth building.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">The AI</div>
+    <h2>How AI is used, and where it deliberately is not</h2>
+    <div class="mt-wrap">
+      <table class="mt-table">
+        <thead><tr><th>Job</th><th>Approach</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Notice what changed</td><td>Diff against the last session's state. Rules, not model.</td><td>Deterministic, auditable, ships in weeks. A lot of the value lives here.</td></tr>
+          <tr><td>Find what repeats</td><td>Cross session synthesis over transcripts and reflections.</td><td>Pattern across time is the one thing a human cannot hold across a full portfolio.</td></tr>
+          <tr><td>Rank what matters</td><td>Rules first, model second.</td><td>Too many inputs will not all fit. Start with an auditable ordering and learn the model.</td></tr>
+          <tr><td>Interpret the member</td><td>Not AI.</td><td>Coaches are selected for domain expertise and judgment. Pregame gives them better inputs, not conclusions.</td></tr>
+          <tr><td>Generate Growth Plan steps</td><td>Not here.</td><td>Growth Plan already suggests steps. Pregame surfaces status and stalls and stays out of that lane.</td></tr>
+          <tr><td>Confirm what is true</td><td>Not AI.</td><td>Each role verifies their own reflection. That is what makes it safe to assemble across nine sessions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Example</div>
+    <h2>One session, two readers, two briefs</h2>
+    <p class="sub">A member nine sessions in, building an outbound motion. Wednesday afternoon, for a Thursday session.</p>
+    <div class="mt-briefs">
+      <div class="mt-brief">
+        <p class="bh">Coach Pregame</p>
+        <p class="bm">Dana R. · Thu 2:00 PM · Session 9</p>
+        <dl>
+          <dt>Growth Plan</dt><dd>Build and launch the outbound motion. 3 of 7 steps complete. Two steps unchanged for three weeks, both sequencing. She added one step herself on Aug 24.</dd>
+          <dt>Across sessions</dt><dd>Sessions 6, 7 and 8: a peer issue framed each time as a process problem. Same language, three sessions running.</dd>
+          <dt>New since last session</dt><dd>Peer Insights: 2 of 5 responded, both mention decision speed. Document uploaded Aug 28: Beliefs Exercise, completed. Pulse Check down on two items since June.</dd>
+          <dt>Her highlight</dt><dd>"Stepping in to fix things isn't neutral."</dd>
+          <dt>Your background applies</dt><dd>You built an outbound motion from zero. Her two stalled steps are both sequencing. A mentorship moment, if she asks for it.</dd>
+        </dl>
+      </div>
+      <div class="mt-brief">
+        <p class="bh">Member Pregame</p>
+        <p class="bm">Your session with Adam · Thu 2:00 PM</p>
+        <dl>
+          <dt>What you said you would do</dt><dd>3 of 7 steps done on the outbound motion. Still open: draft a 3 step sequence, and ask Alex for the traits of your top customers.</dd>
+          <dt>What you highlighted last time</dt><dd>"Stepping in to fix things isn't neutral."</dd>
+          <dt>New since last session</dt><dd>2 of 5 peers have responded to your Peer Insights request. You completed the Beliefs Exercise on Aug 28. Adam has not seen it unless you share it.</dd>
+          <dt>You might want to bring</dt><dd>The two sequencing steps have not moved in three weeks. Worth naming why, out loud.</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="mt-cap">Every line opens its source, and one item is flagged unverified. Same session, two readers, two briefs. The content is invented; the surfaces are real. Nothing in the member brief is shared with their employer.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">Risks</div>
+    <h2>The four risks to the bet</h2>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">Nobody reviews their reflection</div><p>The dominant risk, and it is adoption rather than model quality. Without review, there is nothing safe to build on.</p></div>
+      <div class="cs-card"><div class="k">Pregame flattens coaching</div><p>Mento sells judgment from operators with real domain expertise. A brief that becomes an agenda damages the thing the 80/20 methodology exists to protect.</p></div>
+      <div class="cs-card"><div class="k">Rubber stamping</div><p>Someone confirms without reading, which launders an interpretation into verified truth. Worse than leaving it flagged.</p></div>
+      <div class="cs-card"><div class="k">Confidentiality</div><p>More data means more risk, yet most of the data already exists. Nothing creates a path to an employer visible surface, and the two role views never merge.</p></div>
+    </div>
+    <h2 style="margin-top:44px">Failure modes in production</h2>
+    <div class="mt-wrap">
+      <table class="mt-table">
+        <thead><tr><th>Failure mode</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>Interpretation compounds</td><td>A review step per role. Unverified content is flagged and weighted down, never treated as evidence.</td></tr>
+          <tr><td>Coincidence read as pattern</td><td>Patterns render with evidence attached and are dismissible. A minimum occurrence threshold before anything surfaces.</td></tr>
+          <tr><td>Cross role leakage</td><td>Two separate assemblies from a shared store, scoped in the query layer, not the prompt.</td></tr>
+          <tr><td>Private material surfaced</td><td>Documents surface only when the member has shared them. Existence, never contents, otherwise.</td></tr>
+          <tr><td>Stale context</td><td>Everything timestamped and source linked. Recency weighting on all six inputs.</td></tr>
+          <tr><td>Thin brief</td><td>An explicit early engagement layout. Different content, not less of it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Quality</div>
+    <h2>How I would evaluate it, and when it ships</h2>
+    <p class="sub">Five evaluation dimensions, and hard launch thresholds. If coaches will not review, or member session ratings move down, this does not ship regardless of how good the assembly is.</p>
+    <div class="cs-evidence">
+      <div class="cs-ev"><div class="src">Assembly accuracy</div><p>Precision and recall on "what changed" against 100 hand labeled engagement windows.</p></div>
+      <div class="cs-ev"><div class="src">Pattern validity</div><p>Coach agreement on surfaced cross session themes, against a blind human labeled set.</p></div>
+      <div class="cs-ev"><div class="src">Coaching quality</div><p>Member rated session usefulness against a matched control cohort.</p></div>
+      <div class="cs-ev"><div class="src">Individualization</div><p>Blind review of whether briefed sessions became more or less specific to the member.</p></div>
+      <div class="cs-ev"><div class="src">Safety</div><p>Zero cross role and cross member leakage across 500 generated briefs.</p></div>
+    </div>
+    <div class="mt-wrap">
+      <table class="mt-table">
+        <thead><tr><th>Threshold</th><th>Metric</th></tr></thead>
+        <tbody>
+          <tr><td>Above 90%</td><td>Precision on what changed since last session.</td></tr>
+          <tr><td>Zero</td><td>Cross role or cross member leakage in 500 briefs.</td></tr>
+          <tr><td>At or above 80%</td><td>Median coach rating of brief usefulness.</td></tr>
+          <tr><td>Under 5% drop</td><td>Coach satisfaction or member session rating in the pilot. This is the kill criterion.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">MVP</div>
+    <h2>What ships first, and what waits</h2>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">In v1</div><p>Reflection review step for both roles. Coach and Member Pregame from transcripts, reflections, and Growth Plan status. Email plus in app, 24 hours before the session. Twenty volunteer coaches, Leadership tier, matched control held out.</p></div>
+      <div class="cs-card"><div class="k">Out of v1</div><p>Documents, Peer Insights, and Pulse Check as inputs. Coach expertise matching the moments. Executive tier and 60 minute sessions. Any employer facing surface.</p></div>
+    </div>
+    <h2 style="margin-top:44px">Success metrics</h2>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">Primary</div><p>Member rated session usefulness against control, the only proof Pregame improved coaching rather than coach convenience. Plus reflection review rate.</p></div>
+      <div class="cs-card"><div class="k">Secondary</div><p>Growth Plan step velocity measured member side. Brief open rate and section level engagement, which tells us which inputs earn their place. Movement on the items the brief surfaced.</p></div>
+      <div class="cs-card"><div class="k">Counter metrics</div><p>Coach satisfaction, which must not move down. Session rating variance.</p></div>
+    </div>
+    <h2 style="margin-top:44px">Rollout</h2>
+    <div class="cs-lanes">
+      <div class="cs-lane"><h4>Weeks 1 to 4</h4><div class="when">Moments evolution</div><ul><li>Reflection review for both roles, opt in coaches</li><li>Establish the baseline</li><li>Run the placement test</li></ul></div>
+      <div class="cs-lane"><h4>Weeks 5 to 10</h4><div class="when">Pregame pilot</div><ul><li>Coach and Member Pregame</li><li>Three inputs, same cohort</li><li>Matched control held out</li></ul></div>
+      <div class="cs-lane"><h4>Weeks 11 to 14</h4><div class="when">Scale</div><ul><li>Leadership tier default on, opt out</li><li>Review stays voluntary</li><li>Add periodic inputs once engagement asks for them</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Considered</div>
+    <h2>Considered, not pursued</h2>
+    <div class="mt-wrap">
+      <table class="mt-table">
+        <thead><tr><th>Idea</th><th>Verdict</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Company Context Layer</td><td>Phase two</td><td>Account level signal for coaches: funding, reorgs, layoffs, anonymized cross cohort themes. Genuinely differentiated, but it needs a k anonymity floor enforced in code and a buyer consent conversation.</td></tr>
+          <tr><td>Coach facing topic suggestions</td><td>Rejected</td><td>Suggesting topics to a member is help. Suggesting questions to an expert coach is the start of a script.</td></tr>
+          <tr><td>Continuity Pack</td><td>Deferred</td><td>Coach transitions reset an engagement to zero. Real problem, lower volume, and once Pregame exists this is the same assembly pointed at a different reader.</td></tr>
+          <tr><td>Engagement Zero</td><td>Deferred</td><td>Pregame for the chemistry call and session one. The only inputs that exist then decay fast, so they belong in the first two Pregames and nowhere after.</td></tr>
+          <tr><td>Rehearsal for members</td><td>Not now</td><td>AI roleplay for the hard conversation. Highest upside and the best demo, but fundamentally a safety build. Distress, harassment disclosure, or legal adjacent scenarios require a human escalation path at 100% reliability.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap reveal">
+    <div class="eyebrow">Point of View</div>
+    <h2>Where AI should, and should not, reshape a coaching product</h2>
+    <ul class="cs-outcomes" style="margin-top:8px">
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>An AI may assemble what happened. It should not be the only one who decides what it meant.</b> Session Reflection already crosses from summary into interpretation and delivers it in second person as the member's own realization. That is a powerful product and the right instinct, but a wrong read goes unchallenged. The fix is a review step, not less ambition.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>AI should never occupy the relationship.</b> What Mento sells is a coach with real domain expertise. Any feature that leaves a member unsure whether they are hearing from their coach destroys the asset, which rules out auto sent async replies, undisclosed coach voice generation, and suggested questions that turn an expert into a reader.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>Capturing this data creates an obligation nobody in this market has answered yet.</b> The most candid material a member produces at work, now assembled in one place. What is the retention policy, and can a member delete a session? That is a procurement question that is coming, and answering it first is a position worth holding.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cs-cta">
+  <div class="wrap reveal">
+    <h2>Built as a work sample for Mento.</h2>
+    <div class="row">
+      <a href="case-studies.html" class="btn btn-ghost">← All case studies</a>
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="social">
+      <a href="mailto:miguelharrisonhaber@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      <a href="https://www.linkedin.com/in/miguel-haber-65008689" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.07 1.4-2.07 2.85V21h-4z"/></svg></a>
+    </div>
+    <p style="margin-top:20px;opacity:.7">© <span id="yr"></span> Miguel Haber. Built with an AI-native workflow.</p>
+  </div>
+</footer>
+</div><!-- /#mento-main -->
+
+<script>
+(function(){
+  try{ if(sessionStorage.getItem('mento-unlock')==='1'){ document.documentElement.classList.add('mento-open'); } }catch(e){}
+  var PASS='claysteel';
+  function unlock(){
+    var el=document.getElementById('mento-pass');
+    var val=(el.value||'').trim().toLowerCase();
+    if(val===PASS){
+      try{ sessionStorage.setItem('mento-unlock','1'); }catch(e){}
+      document.documentElement.classList.add('mento-open');
+    }else{
+      var err=document.getElementById('mento-err'); if(err) err.style.display='block';
+      el.value=''; el.focus();
+    }
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('mento-btn');
+    var inp=document.getElementById('mento-pass');
+    if(btn) btn.addEventListener('click',unlock);
+    if(inp) inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); unlock(); } });
+  });
+})();
+</script>
+<script src="case.js"></script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

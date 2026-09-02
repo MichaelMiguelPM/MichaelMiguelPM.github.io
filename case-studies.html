@@ -10,6 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="case.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2324A2A1'/><text x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>M</text></svg>" />
+<style>
+.case.locked{position:relative}
+.case.locked .lock-badge{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:var(--accent)}
+.case.locked .lock-badge svg{width:23px;height:23px;stroke:#fff;fill:none;stroke-width:2}
+.case.locked .tag{color:var(--accent)}
+</style>
 </head>
 <body>
 <header class="nav" id="nav">
@@ -36,6 +42,7 @@
           <a href="case-free-trial.html">Self-Serve Free Trial<small>Built a frictionless path from anonymous visitor to paying customer</small></a>
           <a href="case-project-room.html">Hackathon Project Room v2<small>Redesigning of Project Room, delivered through an AI-enabled process.</small></a>
           <a href="case-whiteboard.html">Whiteboard<small>An AI-powered, real-time multiplayer ZUI</small></a>
+          <a href="case-mento.html">🔒 Pregame<small>Private work sample, passcode protected</small></a>
         </div>
       </div>
       <div class="nav-dd">
@@ -109,6 +116,19 @@
             <div class="case-side">
               <div class="case-metric">80%</div>
               <div class="case-metric-l">enterprise adoption</div>
+            </div>
+          </a>
+          <a class="case reveal locked" href="case-mento.html">
+            <div class="case-main">
+              <div class="tag">🔒 Private Work Sample</div>
+              <h3>Pregame</h3>
+              <div class="case-header">A pre-session brief that assembles what changed, before the coaching session</div>
+              <p>Pregame assembles everything that changed since the last session into a one page brief, one for the coach and one for the member, delivered 24 hours ahead. An assembly problem, not an intelligence problem.</p>
+              <ul><li>AI Product</li><li>Coaching</li><li>Trust &amp; Safety</li><li>MVP Scoping</li></ul>
+            </div>
+            <div class="case-side">
+              <div class="lock-badge"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+              <div class="case-metric-l">Passcode protected</div>
             </div>
           </a>
         </div>
