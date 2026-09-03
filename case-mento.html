@@ -31,6 +31,9 @@ html.mento-open #mento-gate{display:none}
 .gate-foot{margin:22px 0 0;font-size:.78rem;color:var(--muted);opacity:.8}
 .gate-foot a{color:var(--accent);text-decoration:none}
 /* ---- Content helpers ---- */
+/* Section copy spans the same column as the cards and tables below it.
+   .wrap already handles the responsive clamp, so no breakpoints needed. */
+.cs-section .sub,.cs-section p.body{max-width:none}
 .mt-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:.92rem}
 .mt-table th,.mt-table td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
 .mt-table th{font-family:var(--font-display);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
