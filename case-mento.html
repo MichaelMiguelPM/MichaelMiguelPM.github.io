@@ -34,6 +34,8 @@ html.mento-open #mento-gate{display:none}
 /* Section copy spans the same column as the cards and tables below it.
    .wrap already handles the responsive clamp, so no breakpoints needed. */
 .cs-section .sub,.cs-section p.body{max-width:none}
+.mt-figure{margin:26px 0 22px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:0 18px 44px -32px rgba(15,42,42,.55)}
+.mt-figure img{display:block;width:100%;height:auto}
 .mt-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:.92rem}
 .mt-table th,.mt-table td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
 .mt-table th{font-family:var(--font-display);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
@@ -127,7 +129,11 @@ html.mento-open #mento-gate{display:none}
   <div class="wrap reveal">
     <div class="eyebrow">The Recommendation</div>
     <h2>Build Pregame</h2>
-    <p class="body">Moments makes coaching actionable between sessions. Session Reflection looks back at a session, while Pregame looks forward across the whole engagement. The claim underneath everything: <strong>Pregame consolidates and exposes the data, coaches and members decide what to do with it</strong>. Every input already exists in the product and is already visible to someone. This is an assembly problem, not an intelligence problem, which is exactly why it empowers the coaching session instead of replacing coach insight. Just like Session Reflection, one version for the coach and one for the member.</p>
+    <p class="body">Moments makes coaching actionable between sessions. Session Reflection looks back at a session, while Pregame looks forward across the whole engagement. The claim underneath everything: <strong>Pregame consolidates and exposes the data, coaches and members decide what to do with it</strong>.</p>
+    <figure class="mt-figure">
+      <img src="pregame-moments.png" width="1658" height="1106" loading="lazy" decoding="async" alt="The Pregame brief inside Moments. A left rail shows Last Session, Session Reflection, Pregame marked Now Available, and Next Session. The brief lists Transcript Trends and Session Reflection Trends, each claim backed by dated, attributed quotes from the member." />
+    </figure>
+    <p class="body">Every input already exists in the product and is already visible to someone. This is an assembly problem, not an intelligence problem, which is exactly why it empowers the coaching session instead of replacing coach insight. Just like Session Reflection, one version for the coach and one for the member.</p>
   </div>
 </section>
 
@@ -211,43 +217,14 @@ html.mento-open #mento-gate{display:none}
     <div class="eyebrow">CPE</div>
     <h2>Critical Product Evolution for Moments</h2>
     <p class="body">Session Reflection tells a member things like "being the safety net was your whole identity here." That is an interpretation, not a summary. Nobody confirms it before it lands. Pregame would read reflections across an entire engagement, so a wrong interpretation stops being one bad paragraph and becomes a pattern.</p>
+    <figure class="mt-figure">
+      <img src="reflection-review.png" width="1656" height="1095" loading="lazy" decoding="async" alt="The Session Reflection review inside Moments. A left rail shows Last Session, Session Reflection selected, Pregame and Next Session. The coach's Reflection for Session 8 is sourced from the session transcript, and a Review Reflection block reads Confirm, edit, or remove in under 60 seconds with Confirm Reflection and Edit Reflection buttons. A note says the member reviews their own Reflection separately." />
+    </figure>
     <p class="body">The fix is a review step on each role's own reflection. The coach reviews the coach version, the member reviews the member version, neither sees the other. Confirm, edit, or remove, in under 60 seconds. Confirmed content is what Pregame is allowed to build on. Unconfirmed content still exists, flagged and weighted down or excluded. This is an evolution of a surface that already exists, it makes Mento's AI features more trustworthy, and it is the dependency that makes everything downstream worth building.</p>
   </div>
 </section>
 
 <section class="cs-section alt">
-  <div class="wrap reveal">
-    <div class="eyebrow">Example</div>
-    <h2>One session, two readers, two briefs</h2>
-    <p class="sub">A member nine sessions in, building an outbound motion. Wednesday afternoon, for a Thursday session.</p>
-    <div class="mt-briefs">
-      <div class="mt-brief">
-        <p class="bh">Coach Pregame</p>
-        <p class="bm">Dana R. · Thu 2:00 PM · Session 9</p>
-        <dl>
-          <dt>Growth Plan</dt><dd>Build and launch the outbound motion. 3 of 7 steps complete. Two steps unchanged for three weeks, both sequencing. She added one step herself on Aug 24.</dd>
-          <dt>Across sessions</dt><dd>Sessions 6, 7 and 8: a peer issue framed each time as a process problem. Same language, three sessions running.</dd>
-          <dt>New since last session</dt><dd>Peer Insights: 2 of 5 responded, both mention decision speed. Document uploaded Aug 28: Beliefs Exercise, completed. Pulse Check down on two items since June.</dd>
-          <dt>Her highlight</dt><dd>"Stepping in to fix things isn't neutral."</dd>
-          <dt>Your background applies</dt><dd>You built an outbound motion from zero. Her two stalled steps are both sequencing. A mentorship moment, if she asks for it.</dd>
-        </dl>
-      </div>
-      <div class="mt-brief">
-        <p class="bh">Member Pregame</p>
-        <p class="bm">Your session with Adam · Thu 2:00 PM</p>
-        <dl>
-          <dt>What you said you would do</dt><dd>3 of 7 steps done on the outbound motion. Still open: draft a 3 step sequence, and ask Alex for the traits of your top customers.</dd>
-          <dt>What you highlighted last time</dt><dd>"Stepping in to fix things isn't neutral."</dd>
-          <dt>New since last session</dt><dd>2 of 5 peers have responded to your Peer Insights request. You completed the Beliefs Exercise on Aug 28. Adam has not seen it unless you share it.</dd>
-          <dt>You might want to bring</dt><dd>The two sequencing steps have not moved in three weeks. Worth naming why, out loud.</dd>
-        </dl>
-      </div>
-    </div>
-    <p class="mt-cap">Every line opens its source, and one item is flagged unverified. Same session, two readers, two briefs. The content is invented; the surfaces are real. Nothing in the member brief is shared with their employer.</p>
-  </div>
-</section>
-
-<section class="cs-section">
   <div class="wrap reveal">
     <div class="eyebrow">Risks</div>
     <h2>The three risks to the bet</h2>
@@ -273,7 +250,7 @@ html.mento-open #mento-gate{display:none}
   </div>
 </section>
 
-<section class="cs-section alt">
+<section class="cs-section">
   <div class="wrap reveal">
     <div class="eyebrow">Quality</div>
     <h2>How I would evaluate it, and when it ships</h2>
@@ -296,6 +273,17 @@ html.mento-open #mento-gate{display:none}
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section class="cs-section alt">
+  <div class="wrap reveal">
+    <div class="eyebrow">Example AI Interaction</div>
+    <h2>Moments: Pregame</h2>
+    <p class="sub">Context, before the session. Not during. A one page brief that assembles everything that changed since the last session, delivered in product and by email 24 hours before the next one. One version for the coach, one for the member.</p>
+    <figure class="mt-figure">
+      <img src="pregame-homepage.png" width="1645" height="752" loading="lazy" decoding="async" alt="The Mento home screen for a coach, headed Good morning, Theresa. Five cards run across it: Coaching, Growth Plan, Moments, Podcast and Event. The Moments card, titled Catch up before Wednesday, lists Last Session and Session Reflection above a highlighted Pregame entry marked Now Available, with an Open Moments button." />
+    </figure>
   </div>
 </section>
 
@@ -350,7 +338,6 @@ html.mento-open #mento-gate{display:none}
     <ul class="cs-outcomes" style="margin-top:8px">
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>An AI may assemble what happened. It should not be the only one who decides what it meant.</b> Session Reflection already crosses from summary into interpretation and delivers it in second person as the member's own realization. That is a powerful product and the right instinct, but a wrong read goes unchallenged. The fix is a review step, not less ambition.</span></li>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>AI should never occupy the relationship.</b> What Mento sells is a coach with real domain expertise. Any feature that leaves a member unsure whether they are hearing from their coach destroys the asset, which rules out auto sent async replies, undisclosed coach voice generation, and suggested questions that turn an expert into a reader.</span></li>
-      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>Capturing this data creates an obligation nobody in this market has answered yet.</b> The most candid material a member produces at work, now assembled in one place. What is the retention policy, and can a member delete a session? That is a procurement question that is coming, and answering it first is a position worth holding.</span></li>
     </ul>
   </div>
 </section>
