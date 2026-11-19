@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AI Rebooking (mobile) — Miguel Haber</title>
-<meta name="description" content="Password-protected mobile prototype of an AI-assisted airline rebooking flow, built with Claude Code by Miguel Haber." />
+<meta name="description" content="Case study and mobile prototype: how Miguel Haber used AI to go from a 2.5-hour product brief to discovery, hypotheses and a clickable AI rebooking prototype." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
@@ -15,6 +15,19 @@
 .proto-note svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:2}
 .proto-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px}
 .proto-cta .btn svg{width:17px;height:17px}
+.hiw-flow{display:flex;align-items:stretch;flex-wrap:wrap;margin-top:24px}
+.hiw-card{flex:1 1 170px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 12px 30px -24px rgba(15,42,42,.5)}
+.hiw-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.hiw-badge{width:28px;height:28px;flex:none;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:.82rem}
+.hiw-k{font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--text)}
+.hiw-card p{color:var(--muted);font-size:.88rem;line-height:1.55}
+.hiw-arrow{flex:0 0 30px;display:grid;place-items:center;color:var(--accent)}
+.hiw-arrow svg{width:22px;height:22px}
+.leak{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+.toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.toc a{font-size:.85rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 14px;text-decoration:none;background:var(--surface-2)}
+.toc a:hover{color:var(--accent)}
+@media(max-width:760px){.hiw-flow{flex-direction:column}.hiw-card{flex:1 1 auto}.hiw-arrow{flex:none;height:24px}.hiw-arrow svg{transform:rotate(90deg)}}
 </style>
 </head>
 <body>
@@ -60,19 +73,142 @@
 
 <section class="cs-hero" style="padding-bottom:30px">
   <div class="wrap reveal">
-    <div class="eyebrow">Prototype · Concept</div>
+    <div class="eyebrow">Prototype · Case study · 2.5-hour onsite exercise</div>
     <h1>AI Rebooking (mobile)</h1>
     <p class="lead">A clickable mobile prototype of an AI-assisted rebooking flow for corporate travelers, built with Claude Code. When a flight is cancelled, the AI has already checked the traveler, the company policy and the deadline, and held the best seat. The traveler confirms in one tap. Agents only see the exceptions.</p>
     <div class="proto-cta">
       <a class="btn btn-primary" href="prototype-ai-rebooking-app.html" target="_blank" rel="noopener">Launch prototype <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="proto-note"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Password protected. Ask me for access.</div>
+    <div class="cs-meta" style="margin-top:22px"><span>Role: <b>AI Product Manager (exercise)</b></span><span>Timebox: <b>2.5 hours</b></span><span>Primary user: <b>Corporate travel agent</b></span></div>
+    <div>
+      <span class="pill">AI-Augmented Discovery</span><span class="pill">Data Analysis</span><span class="pill">Workflow Mapping</span><span class="pill">Hypotheses</span><span class="pill">Claude Code</span>
+    </div>
+    <nav class="toc" aria-label="On this page">
+      <a href="#discovery">1. Discovery</a><a href="#problem">2. The user's problem</a><a href="#process">3. The process</a><a href="#refine">4. Refining with diagrams</a><a href="#hypotheses">5. Hypotheses</a><a href="#tools">6. AI tools</a><a href="#prototype">The prototype</a>
+    </nav>
   </div>
 </section>
 
-<section class="cs-section" style="padding-top:20px">
+<section class="cs-section alt" id="discovery">
   <div class="wrap reveal">
-    <div class="eyebrow">About this prototype</div>
+    <div class="eyebrow">1 · Discovery with AI</div>
+    <h2>Read everything before deciding anything</h2>
+    <p class="sub">The brief: as an AI PM at United, prototype an AI-driven rebooking experience for corporate travelers whose flights are cancelled about a week out. United wants to cut the share rebooked on other airlines from about 25% to 17%. I had 2.5 hours, a sample of one agent's morning queue, and a brief I couldn't open at first.</p>
+    <div class="cs-evidence" style="margin-top:24px">
+      <div class="cs-ev"><div class="src">Confirm access first</div><p>I handed Claude every file (9 CSVs, a JSON export, the workbook and a Google Sheet) and asked it only to confirm what it could open. The Notion brief was behind a login, so I shared screenshots instead.</p></div>
+      <div class="cs-ev"><div class="src">Frame who, what, how</div><p>Before any analysis I ranked what I needed to know: my role, United's goal, the agent's operating reality, then the data.</p></div>
+      <div class="cs-ev"><div class="src">Let code read the data</div><p>Rather than eyeball 82 cases, I had Claude score all 344 rebooking options against each traveler's deadline, company policy and pre-approved budget.</p></div>
+      <div class="cs-ev"><div class="src">Name the gaps</div><p>The data holds no record of what agents actually booked, so leakage can't be measured from it. Every idea had to become a hypothesis, not a claim.</p></div>
+    </div>
+    <div class="cs-metrics">
+      <div class="cs-metric"><div class="n">82</div><div class="l">cancellations in one agent's morning queue</div></div>
+      <div class="cs-metric"><div class="n">344</div><div class="l">rebooking options scored</div></div>
+      <div class="cs-metric"><div class="n">7</div><div class="l">corporate travel policies</div></div>
+      <div class="cs-metric"><div class="n">~2 min</div><div class="l">an agent has per case today</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section" id="problem">
+  <div class="wrap reveal">
+    <div class="eyebrow">2 · Learning the user's problem</div>
+    <h2>United has the seats. Agents don't have the time.</h2>
+    <p class="sub">The first surprise: in all 81 cases with options, at least one United flight was on time and within the pre-approved budget. With stricter checks for traveler preferences, red-eyes and connections it was still 74 of 81. Leakage wasn't a supply problem. It was a speed and trust problem.</p>
+    <div class="cs-grid" style="margin-top:24px">
+      <div class="cs-card"><div class="k">The agent (primary user)</div><p>80 to 120 cancellations a day in about 3 hours. Under that pressure the first workable option wins, whatever airline it's on.</p></div>
+      <div class="cs-card"><div class="k">The traveler</div><p>Needs to arrive on time with their preferences respected. Half reply within 24 hours; held seats last only 24 to 48.</p></div>
+      <div class="cs-card"><div class="k">The travel manager</div><p>Owns the policy and budget. Some policies say "lowest fare, any carrier," which pulls bookings off United.</p></div>
+      <div class="cs-card"><div class="k">United</div><p>Wants travelers to stay on United. That's the conflict: it only works if United's option wins on merit, never by hiding a better one.</p></div>
+    </div>
+    <div class="cs-evidence" style="margin-top:24px">
+      <div class="cs-ev"><div class="src">Profiles can't be trusted</div><p>36 of 81 travelers had stale, incomplete or conflicting profile data.</p></div>
+      <div class="cs-ev"><div class="src">Seats are scarce</div><p>In 12 of 81 cases the best United option had 2 or fewer seats left.</p></div>
+      <div class="cs-ev"><div class="src">Small fare gaps</div><p>In 9 cases another airline was cheaper, by $12 to $71, mostly for "any carrier" policies.</p></div>
+      <div class="cs-ev"><div class="src">Missing deadlines</div><p>16 cases had no meeting time at all, and some sources contradicted each other.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section alt" id="process">
+  <div class="wrap reveal">
+    <div class="eyebrow">3 · Learning the process</div>
+    <h2>Ten manual steps, four places to lose a traveler</h2>
+    <p class="sub">I mapped how an agent rebooks today, step by step, and marked where a traveler is most likely to end up on another airline. Each leak point became an assumption to test.</p>
+    <div class="hiw-flow">
+      <div class="hiw-card"><div class="hiw-head"><span class="hiw-badge">1</span><span class="hiw-k">Triage</span></div><p>Pick the next case from an unranked queue.</p><span class="leak">High leak risk</span></div>
+      <div class="hiw-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hiw-card"><div class="hiw-head"><span class="hiw-badge">2–5</span><span class="hiw-k">Read and check</span></div><p>Disruption, traveler profile, policy and deadline, all by hand.</p><span class="leak">Policy pulls off United</span></div>
+      <div class="hiw-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hiw-card"><div class="hiw-head"><span class="hiw-badge">6–7</span><span class="hiw-k">Search and choose</span></div><p>Compare cost, timing and preferences in under 2 minutes.</p><span class="leak">Highest leak risk</span></div>
+      <div class="hiw-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hiw-card"><div class="hiw-head"><span class="hiw-badge">8–9</span><span class="hiw-k">Wait</span></div><p>On the approver, then the traveler, while the held seat expires.</p><span class="leak">High leak risk</span></div>
+      <div class="hiw-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hiw-card"><div class="hiw-head"><span class="hiw-badge">10</span><span class="hiw-k">Book</span></div><p>Ticket, then fix the hotel and car.</p><span class="leak">Low risk</span></div>
+    </div>
+    <p class="body" style="margin-top:22px">The insight: steps 2 to 7 are reading and reasoning, which AI does fast. Steps 8 and 9 are waiting, which the product should run in parallel. The final choice and anything unclear stays with a person.</p>
+  </div>
+</section>
+
+<section class="cs-section" id="refine">
+  <div class="wrap reveal">
+    <div class="eyebrow">4 · Refining with diagrams</div>
+    <h2>Drawing it until the shape was right</h2>
+    <p class="sub">Each diagram exposed something the last one hid. I moved from a quick inline flowchart to a shared whiteboard I could rearrange and build on.</p>
+    <div class="cs-evidence" style="margin-top:24px">
+      <div class="cs-ev"><div class="src">Leak-point flowchart</div><p>The 10 steps with the six high-risk ones highlighted, so the problem was visible at a glance.</p></div>
+      <div class="cs-ev"><div class="src">AI vs. human callouts</div><p>On a whiteboard, every step got a note on what the AI checks, what a person checks, and why.</p></div>
+      <div class="cs-ev"><div class="src">A yes/no split at step 3</div><p>Clean traveler data (45 of 81) passes straight through. Issues (36) go to the agent as a triaged list.</p></div>
+      <div class="cs-ev"><div class="src">Four user flows</div><p>A happy path, plus flags for incomplete traveler data, a policy issue, and no strong United option.</p></div>
+    </div>
+    <div class="cs-quote" style="margin-top:30px">
+      <p>"Removing the agent from the happy path is the empathy. Their limited time goes to the cases that need a human decision."</p>
+      <cite>The reframe that shaped the prototype</cite>
+    </div>
+    <p class="body" style="margin-top:18px">With strict rules (clean data, known deadline, an on-time United option within budget), 26 of 82 cases could run with no agent at all. That's roughly 50% more time per case for everything else. The agent stays accountable by setting the rules up front, reviewing a list of what the AI handled, and keeping an Undo.</p>
+  </div>
+</section>
+
+<section class="cs-section alt" id="hypotheses">
+  <div class="wrap reveal">
+    <div class="eyebrow">5 · Picking hypotheses to test</div>
+    <h2>From ten ideas to five worth building</h2>
+    <p class="sub">I generated ten hypotheses for reaching 17%, checked each one against the data, then kept the five that got my attention and dropped or reshaped the rest.</p>
+    <ul class="cs-outcomes" style="margin-top:8px">
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>One click on the top 1 to 3 United options.</b> The in-policy pick comes first. Only 49 of 81 cases had three workable United options, so the list never pads with ones that don't work.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>Hold the best seat the moment the cancellation arrives.</b> This closes the gap between 24-hour replies and 24-to-48-hour holds. It's the one I'd test first.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>Count Star Alliance partners United tickets as United options.</b> They add backup seats when United's own flight is nearly full.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>Flag small fare gaps instead of hiding them.</b> I first thought United should cover extra hotel nights, but the data didn't support it. Instead, when another airline is under $50 cheaper and the policy allows any airline, the agent decides, with United preselected.</span></li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span><b>Show why, so agents trust the pick.</b> Every recommendation cites the policy line, the deadline it protects and what it left out. Overrides are logged with a reason from a fixed list, which makes the 25% to 17% goal measurable.</span></li>
+    </ul>
+    <div class="cs-lanes" style="margin-top:30px">
+      <div class="cs-lane"><h4>AI decides</h4><div class="when">Within agency rules</div><ul><li>Rank the queue</li><li>Read the disruption</li><li>Check data, policy and deadline</li><li>Pick and hold the top options</li></ul></div>
+      <div class="cs-lane"><h4>A person decides</h4><div class="when">Judgment and accountability</div><ul><li>Traveler picks in one tap</li><li>Agent handles flagged cases</li><li>Travel manager approves exceptions</li><li>Agent can move off United, with a reason</li></ul></div>
+      <div class="cs-lane"><h4>How I'd know it works</h4><div class="when">Measured from day one</div><ul><li>Top-pick acceptance rate</li><li>Holds converted vs. expired</li><li>Override and undo rate, by reason</li><li>Leakage: AI-handled vs. agent-handled</li></ul></div>
+      <div class="cs-lane"><h4>Not built, on purpose</h4><div class="when">Out of a 2.5-hour scope</div><ul><li>Live seat inventory</li><li>Real email and approval routing</li><li>Parsing 180 policy PDFs</li><li>Flows 2 to 4 beyond one agent screen</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section" id="tools">
+  <div class="wrap reveal">
+    <div class="eyebrow">6 · The AI tools I used</div>
+    <h2>One assistant, many surfaces</h2>
+    <dl class="cs-snap" style="margin-top:22px">
+      <div><dt>Claude (in a Project)</dt><dd>Kept the brief, my onsite notes and the whole thread in one place, from first read to final hypotheses</dd></div>
+      <div><dt>Google Drive connector</dt><dd>Read the shared sample-data spreadsheet directly, no downloads</dd></div>
+      <div><dt>Code for analysis</dt><dd>Python over the CSVs to score options, count profile issues and estimate how many cases need no agent</dd></div>
+      <div><dt>Inline diagrams</dt><dd>A quick flowchart of the 10 steps and their leak risk, drawn in the chat</dd></div>
+      <div><dt>Claude Whiteboard</dt><dd>A shared board for AI vs. human callouts, the step 3 yes/no split and four user flows</dd></div>
+      <div><dt>Claude Code</dt><dd>Built the clickable mobile prototype and this page, published to GitHub Pages</dd></div>
+    </dl>
+  </div>
+</section>
+
+
+<section class="cs-section alt" id="prototype">
+  <div class="wrap reveal">
+    <div class="eyebrow">The prototype</div>
     <h2>What you're looking at</h2>
     <p class="sub">A corporate traveler's morning nonstop is cancelled a week out, and a board meeting depends on that flight. Instead of a cancellation notice and a phone queue, the traveler gets one recommended flight that already fits their profile, their company's policy and their 3:00 PM deadline.</p>
     <div class="cs-grid" style="margin-top:24px">
